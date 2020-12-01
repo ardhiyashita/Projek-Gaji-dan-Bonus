@@ -113,7 +113,7 @@ int bonus(int bonus_tawaran, int i)
 	int banyak;
 	char pilihan2;
 	char pilihan3;
-	char pilihan4[2];
+	//char pilihan4[2];
 	//char tambah_input1[2];
 	
 	printf("\t\t\t\t\t==================================\n"); 

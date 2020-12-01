@@ -4,9 +4,11 @@
 #include<time.h>
 #define BONUS 0.2
 
+
 int i,j;
 int bonus_tawaran;
 
+void menu_utama();
 void daftar_barang();
 int bonus(int bonus_tawaran, int i);
 void absen();
@@ -29,10 +31,17 @@ typedef struct{
 	
 }input2;
  input2 data2[10];
-	
+
+
 int main()
 {
-	
+	//agar tidak menyalahi aturan syntax yang berlaku
+	//maka diputuskan untuk membuat fungsi void_menu baru agar program dapat dikembalikan ke awal
+	menu_utama();
+}
+
+void menu_utama()
+{
 	int pilihan;
 		
 	printf("\t\t\t\t\t==================================\n"); 
@@ -71,11 +80,9 @@ int main()
 		case 3 :
 			absen();
 			break;
-		
-	}
-	return 0;
+		}
 }
-	
+
 void daftar_barang()
 {
 	char pilihan1;
@@ -104,8 +111,8 @@ void daftar_barang()
 		case 'N':
 		case 'n':
 		system ("cls");
+		menu_utama();
 	}
-	
 }
 
 int bonus(int bonus_tawaran, int i)
@@ -133,26 +140,6 @@ int bonus(int bonus_tawaran, int i)
 		}
 		
 		system ("cls");
-		/*printf("Tambah inputan? (y/n) --> "); scanf("%s", &tambah_input1);
-		printf("\n");
-		
-	}while(strcmp(tambah_input1, "n")==1);*/
-	
-	
-	/*printf("Ingin melanjutkan ke menu berikutnya? (y/n) --> ");
-	scanf("%s", &pilihan2);
-	
-	switch (pilihan2)
-	{
-		case 'Y':
-		case 'y':
-		system ("cls");
-		goto menu3;
-		
-		case 'N':
-		case 'n':
-		system ("cls");
-	}*/
 	
 	menu3:	
 	printf("\t\t\t\t\t==================================\n"); 
@@ -182,7 +169,7 @@ int bonus(int bonus_tawaran, int i)
 		case 'N':
 		case 'n':
 		system ("cls");
-		main();
+		menu_utama();
 	}
 	
 	return bonus_tawaran, i;
@@ -211,19 +198,7 @@ void absen()
  
     time_t Tval;
     Tval = time(NULL);
-    Sys_T = localtime(&Tval); /* Untuk mendapatkan waktu lokal komputer */
-    /* Sys_T = gmtime(&Tval); Untuk mendapatkan waktu komputer berbasis GMT/UTC */
- 
-    /*Sys_T->tm_mday);
-    Sys_T->tm_mon+1); // Ditambah 1 karena Januari dimulai dari 0 
-    1900+Sys_T->tm_year); // Ditambah 1900, karena tahun dimulai dari 1900 
- 
-    Sys_T->tm_hour);
-    Sys_T->tm_min);
-    Sys_T->tm_sec);
- 
-    Sys_T->tm_wday); // 0-6 melambangkan Minggu-Sabtu
-    Sys_T->tm_yday);*/
+    Sys_T = localtime(&Tval); //Untuk mendapatkan waktu lokal komputer
  
     printf ( "\n\nTanggal dan waktu : %s", asctime (Sys_T));
     /* asctime berfungsi untuk mengubah struct tm menjadi string c dengan format Www Mmm dd hh:mm:ss yyyy */
@@ -257,15 +232,12 @@ void absen()
 	/*printf("\nIngin me-refresh data? (y/n) --> ");
 	scanf("%s", &refresh);
 	
-	if(refresh == 'y')
-	{
+	if(refresh == 'y'){
 		goto refresh;
 	}
-	
 	else{
 		bonus(bonus_tawaran, i);
 	}
-	
 	
 	refresh:*/
 	printf("\t\t\t\t\t==================================\n"); 
@@ -296,12 +268,9 @@ void absen()
 		case 'N':
 		case 'n':
 		system ("cls");
-		main();
+		menu_utama();
 		}
 	
 	}
 }
-
-
-
 

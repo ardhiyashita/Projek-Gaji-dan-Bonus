@@ -4,13 +4,15 @@
 #include<time.h>
 #define BONUS 0.2
 
-int i,j;
+
+int i,j,k;
 int bonus_tawaran;
 
-void menu();
+void login();
+void menu_utama();
 void daftar_barang();
 int bonus(int bonus_tawaran, int i);
-void absen();
+int absen();
 
 typedef struct{
 
@@ -18,28 +20,75 @@ typedef struct{
 	char npelanggan[100];
 	char nproduk[100];
 	int hargaProduk;
+	int bonus_tawaran;
 	
 }input1;
  input1 data1[10];
  
 typedef struct{
 	
-	char absn[2];
+	int absn;
 	char namaPegawai[100];
 	int kodePegawai;
 	
 }input2;
  input2 data2[10];
+
+typedef struct{
 	
+	char namaP[100];
+	char bulan[15];
+	int kodeP;
+	int absenP;
+	
+}input3;
+input3 data3[10];
+
 int main()
 {
 	//agar tidak menyalahi aturan syntax yang berlaku
 	//maka diputuskan untuk membuat fungsi void_menu baru agar program dapat dikembalikan ke awal
-	menu();
+	login();
 	return 0;
 }
+
+void login()
+{
 	
-void menu()
+	char user_name[10];
+	char password[10];
+	
+	login:
+	printf("\t\t\t\t\t==================================\n"); 
+	printf("\t\t\t\t\t|	   TOKO DELUXE		 |\n"); 
+	printf("\t\t\t\t\t==================================\n\n");
+	
+	printf("Masukkan username anda  : "); scanf("%s", &user_name);
+	printf("Masukkan password	: "); scanf("%s", &password);
+		
+	
+		if (strcmp(user_name, "admin")==0 && strcmp(password, "deluxepass")==0 ){
+			printf("\nLogin Sukses");
+			system ("cls");
+			menu_utama();
+		}
+		
+		else if(strcmp(user_name, "pegawai")==0 && strcmp(password, "deluxepass")==0 ){
+			printf("\nLogin Sukses");
+			system ("cls");
+			menu_utama();
+		}
+		
+		else{
+			printf("\nAnda impostor yaaaa:v");
+			/*printf("\nUsername atau Password yang anda masukkan salah!");
+			printf("\nSilahkan mencoba kembali");*/
+			system ("cls");
+			goto login;
+		}
+}
+
+void menu_utama()
 {
 	int pilihan;
 		
@@ -80,9 +129,12 @@ void menu()
 			absen();
 			break;
 		
-	}
+		default :
+			printf("\nPeriksa kembali inputan anda!");
+		}
 }
-	
+
+
 void daftar_barang()
 {
 	char pilihan1;
@@ -111,6 +163,7 @@ void daftar_barang()
 		case 'N':
 		case 'n':
 		system ("cls");
+		menu_utama();
 	}
 	
 }
@@ -120,15 +173,13 @@ int bonus(int bonus_tawaran, int i)
 	int banyak;
 	char pilihan2;
 	char pilihan3;
-	char pilihan4[2];
-	//char tambah_input1[2];
+	
+	
 	
 	printf("\t\t\t\t\t==================================\n"); 
 	printf("\t\t\t\t\t|  	 INPUT BONUS PEGAWAI	 |\n"); 
 	printf("\t\t\t\t\t==================================\n\n");	
 	
-	//do{
-		
 		printf("Masukkan banyak inputan : "); scanf("%d", &banyak);
 		
 		for(i=0; i<banyak; i++){
@@ -140,101 +191,106 @@ int bonus(int bonus_tawaran, int i)
 		}
 		
 		system ("cls");
-		/*printf("Tambah inputan? (y/n) --> "); scanf("%s", &tambah_input1);
-		printf("\n");
-		
-	}while(strcmp(tambah_input1, "n")==1);*/
 	
 	
-	/*printf("Ingin melanjutkan ke menu berikutnya? (y/n) --> ");
-	scanf("%s", &pilihan2);
-	
-	switch (pilihan2)
-	{
-		case 'Y':
-		case 'y':
-		system ("cls");
-		goto menu3;
-		
-		case 'N':
-		case 'n':
-		system ("cls");
-	}*/
 	
 	menu3:	
 	printf("\t\t\t\t\t==================================\n"); 
 	printf("\t\t\t\t\t|	   REKAP BONUS		 |\n"); 
 	printf("\t\t\t\t\t==================================\n\n");
 	
-	printf("Daftar nama pegawai beserta bonus :\n\n");
+		printf("Daftar nama pegawai beserta bonus :\n\n");
 	
-	for(i=0; i<banyak; i++){
-	printf("\n\nNama pegawai 		: %s", data1[i].npegawai);
-	printf("\nKeberhasilan penawaran 	: 1");
+		for(i=0; i<banyak; i++)
+		{
+			printf("\n\nNama pegawai 		: %s", data1[i].npegawai);
+			printf("\nKeberhasilan penawaran 	: 1");
+			
+			data1[i].bonus_tawaran = BONUS*data1[i].hargaProduk;
+			printf("\nTotal bonus sebesar 	: Rp.%d", data1[i].bonus_tawaran);
+		}
 	
-	bonus_tawaran = BONUS*data1[i].hargaProduk;
-	printf("\nTotal bonus sebesar 	: Rp.%d", bonus_tawaran);
-	}
-	
-	printf("\nIngin melanjutkan ke menu berikutnya? (y/n) --> ");
-	scanf("%s", &pilihan3);
-	
-		switch (pilihan3)
-	{
-		case 'Y':
-		case 'y':
-		system ("cls");
-		absen();
-		
-		case 'N':
-		case 'n':
-		system ("cls");
-		menu();
-	}
-	
-	return bonus_tawaran, i;
+		printf("\nIngin melanjutkan ke menu berikutnya? (y/n) --> ");
+		scanf("%s", &pilihan3);
+			
+				switch (pilihan3)
+			{
+				case 'Y':
+				case 'y':
+				system ("cls");
+				absen();
+				
+				case 'N':
+				case 'n':
+				system ("cls");
+				menu_utama();
+			}
+			
+	return data1[i].bonus_tawaran, i;
 }
 
-void absen()
+int absen()
 {
 
+	int pilihan_bulan;
+	
 	char pilihan4;
 	int banyak;
 	char konfirmasi;
 	
-	char absn[2];
+	int absn;
 	char namaPegawai[100];
 	int kodePegawai;
 	
-	int absen1, absen2, absen3, absen4, absen5;
-	char refresh;
+	int pilihan5;
 	
 	
+	
+	absen_menu:
 	printf("\t\t\t\t\t==================================\n"); 
 	printf("\t\t\t\t\t|	   ABSENSI PEGAWAI	 |\n"); 
 	printf("\t\t\t\t\t==================================\n\n");
 	
-    struct tm *Sys_T;
- 
-    time_t Tval;
-    Tval = time(NULL);
-    Sys_T = localtime(&Tval); /* Untuk mendapatkan waktu lokal komputer */
-    /* Sys_T = gmtime(&Tval); Untuk mendapatkan waktu komputer berbasis GMT/UTC */
- 
-    /*Sys_T->tm_mday);
-    Sys_T->tm_mon+1); // Ditambah 1 karena Januari dimulai dari 0 
-    1900+Sys_T->tm_year); // Ditambah 1900, karena tahun dimulai dari 1900 
- 
-    Sys_T->tm_hour);
-    Sys_T->tm_min);
-    Sys_T->tm_sec);
- 
-    Sys_T->tm_wday); // 0-6 melambangkan Minggu-Sabtu
-    Sys_T->tm_yday);*/
- 
-    printf ( "\n\nTanggal dan waktu : %s", asctime (Sys_T));
-    /* asctime berfungsi untuk mengubah struct tm menjadi string c dengan format Www Mmm dd hh:mm:ss yyyy */
+	printf("=================================\n");
+	printf("1. ABSENSI HARIAN		 |\n"); 
+	printf("2. ABSENSI BULANAN		 |\n");
+	printf("=================================\n");
 	
+	printf("Masukkan pilihan absensi : "); scanf("%d", &pilihan_bulan);
+	
+	switch (pilihan_bulan){
+		
+		case 1 :
+			system("cls");
+			goto absen_hrn;
+		
+		case 2 :
+			system("cls");
+			goto absen_bln;
+		
+		default :
+			printf("\nPilihan yang Anda masukkan tidak tersedia!");
+			printf("\nSilahkan coba kembali");
+			system("cls");
+			goto absen_menu;
+	}
+	
+	
+	
+	absen_hrn:
+	printf("\t\t\t\t\t==================================\n"); 
+	printf("\t\t\t\t\t|     ABSENSI HARIAN PEGAWAI     |\n");
+	printf("\t\t\t\t\t==================================\n\n");
+	
+	    struct tm *Sys_T;
+	 
+	    time_t Tval;
+	    Tval = time(NULL);
+	    Sys_T = localtime(&Tval); //Untuk mendapatkan waktu lokal komputer
+	 
+	    printf ( "\n\nTanggal dan waktu : %s", asctime (Sys_T));
+	    /* asctime berfungsi untuk mengubah struct tm menjadi string c dengan format Www Mmm dd hh:mm:ss yyyy */
+		
 	printf("Daftar Nama Pegawai: \n\n");
 	printf("  +-------------------------------------------------------------------------+\n");		
 	printf("  |	No	|	  Nama		|   Kode Pegawai   |	Kehadiran   |\n");
@@ -244,39 +300,27 @@ void absen()
 	printf("  |	3	|	  Anastacia	|   	190303	   |	   -	    |\n");
 	printf("  |	4	|	  Yukita	|   	190604	   |	   -	    |\n");
 	printf("  |	5	|	  Cahaya	|   	200105	   |	   -	    |\n");
-	printf("  +-------------------------------------------------------------------------+\n");	
+	printf("  +-------------------------------------------------------------------------+\n");
 	
 	printf("\nIngin melakukan absensi? (y/n) --> ");
 	scanf("%s", &konfirmasi);
 	
-	if(konfirmasi == 'y'){
+		if(konfirmasi == 'y'){
+			
+		printf("Masukkan banyak inputan : "); scanf("%d", &banyak);
 		
-	printf("Masukkan banyak inputan : "); scanf("%d", &banyak);
-	
-	for(j=0; j<banyak; j++){
-	printf("\nMasukkan nama 		: "); scanf("%s", data2[j].namaPegawai);
-	printf("Masukkan kode pegawai	: ");	scanf("%d", &data2[j].kodePegawai);
-	printf("Hadir (y/n)		: "); scanf("%s", data2[j].absn);
-	}
-	
-	system ("cls");
-	
-	/*printf("\nIngin me-refresh data? (y/n) --> ");
-	scanf("%s", &refresh);
-	
-	if(refresh == 'y')
-	{
-		goto refresh;
-	}
-	
-	else{
-		bonus(bonus_tawaran, i);
-	}
+		for(j=0; j<banyak; j++)
+		{
+			printf("\nMasukkan nama 		: "); scanf("%s", data2[j].namaPegawai);
+			printf("Masukkan kode pegawai	: ");	scanf("%d", &data2[j].kodePegawai);
+			printf("Hadir (1/0)		: "); scanf("%d", &data2[j].absn);
+		}
+		system ("cls");
 	
 	
-	refresh:*/
+	
 	printf("\t\t\t\t\t==================================\n"); 
-	printf("\t\t\t\t\t|	   ABSENSI PEGAWAI	|\n"); 
+	printf("\t\t\t\t\t|     ABSENSI HARIAN PEGAWAI     |\n"); 
 	printf("\t\t\t\t\t==================================\n\n");
 	
 	printf("Berhasil melakukan absensi!! \n");
@@ -286,14 +330,137 @@ void absen()
 	printf("  +-------------------------------------------------------------------------+\n");	
 	
 	for(j=0; j<banyak; j++){
+	printf("  |	%d	|	  %s	  |   	%d	   |	   %d	    |\n", j+1, data2[j].namaPegawai, data2[j].kodePegawai, data2[j].absn);
+	}
+	printf("  +-------------------------------------------------------------------------+\n");
+	
+		printf("\nIngin mengisi absen bulanan? (y/n) --> ");
+		scanf("%s", &pilihan4);
+		
+			switch (pilihan4)
+			{
+			case 'Y':
+			case 'y':
+			system ("cls");
+			goto absen_bln;
+			
+			case 'N':
+			case 'n':
+			system ("cls");
+			menu_utama();
+			}
+	}
+	
+	else if(konfirmasi == 'n'){
+		system ("cls");
+		menu_utama();
+	}
+	
+	
+	
+	absen_bln:	
+	printf("\t\t\t\t\t==================================\n"); 
+	printf("\t\t\t\t\t|     ABSENSI BULANAN PEGAWAI    |\n");
+	printf("\t\t\t\t\t==================================\n\n");
+	
+	printf("Daftar Nama Pegawai: \n\n");
+	printf("  +----------------------------------------------------------------------------------+\n");		
+	printf("  |	No	|	  Nama		|   Kode Pegawai   |	Absensi Bulan ini    |\n");
+	printf("  +----------------------------------------------------------------------------------+\n");	
+	printf("  |	1	|	  Ardhiya	|   	181201	   |		-	     |\n");
+	printf("  |	2	|	  Prianka	|   	181202	   |		-	     |\n");
+	printf("  |	3	|	  Anastacia	|   	190303	   |		-	     |\n");
+	printf("  |	4	|	  Yukita	|   	190604	   |		-	     |\n");
+	printf("  |	5	|	  Cahaya	|   	200105	   |		-	     |\n");
+	printf("  +----------------------------------------------------------------------------------+\n");
+	
+	printf("Masukkan banyak inputan : "); scanf("%d", &banyak);
+	
+	for(k=0; k<banyak; k++)
+	{
+		printf("\nMasukkan nama 		: "); scanf("%s", data3[k].namaP);
+		printf("Masukkan kode pegawai	: "); scanf("%d", &data3[k].kodeP);
+		printf("Nama bulan		: "); scanf("%s", data3[k].bulan);
+		printf("Total Kehadiran		: "); scanf("%d", &data3[k].absenP);
+	}
+	system ("cls");
+	
+	
+	
+	printf("\t\t\t\t\t==================================\n"); 
+	printf("\t\t\t\t\t|     ABSENSI BULANAN PEGAWAI    |\n"); 
+	printf("\t\t\t\t\t==================================\n\n");
+	
+	printf("Berhasil melakukan absensi!! \n");
+	printf("Berikut keterangannya : \n\n");
+	printf("  +---------------------------------------------------------------------------------------------------------+\n");		
+	printf("  |	No	|	  Nama		|   Kode Pegawai   |	   Bulan	   |	Absensi Bulan ini   |\n");
+	printf("  +---------------------------------------------------------------------------------------------------------+\n");	
+	
+	for(k=0; k<banyak; k++){
+	printf("  |	%d	|	  %s	|   	%d	   |	   %s	   |		%d	    |\n", k+1, data3[k].namaP, data3[k].kodeP, data3[k].bulan, data3[k].absenP);
+	}
+	printf("  +---------------------------------------------------------------------------------------------------------+\n");
+	
+		printf("\nIngin melanjutkan ke menu berikutnya? (y/n) --> ");
+		scanf("%s", &pilihan5);
+		
+			switch (pilihan5)
+		{
+			case 'Y':
+			case 'y':
+			system ("cls");
+			absen();
+			
+			case 'N':
+			case 'n':
+			system ("cls");
+			menu_utama();
+		}
+		
+}
+
+/*
+void gaji_bonus(struct input1 baru1, struct input2 baru2)
+{
+	
+	printf("\t\t\t\t\t==================================\n"); 
+	printf("\t\t\t\t\t|	   GAJI PEGAWAI	|\n"); 
+	printf("\t\t\t\t\t==================================\n\n");
+
+	
+	printf("Pastikan Anda mengakses menu ini pada akhir bulan!\n");
+	
+	
+	printf("Berikut Daftar Nama Pegawai dan Detail Gaji Per-Orang : \n");
+	printf("  +-------------------------------------------------------------------------+\n");		
+	printf("  |	No	|	  Nama		|   Kode Pegawai   |	Rekap Absensi   |	Pengurangan Gaji	|\n");
+	printf("  +-------------------------------------------------------------------------+\n");	
+	
+	//for(j=0; j<banyak; j++){
+	//printf("  |	1	|	  Ardhiya	   	%d	   |	   %s	    |\n", j+1, data2[j].namaPegawai, data2[j].kodePegawai, data2[j].absn);
+	//}
+	
+	printf("  |	1	|	  Ardhiya	|   	181201	   |	   -	    |	   -	    |\n");
+	printf("  |	2	|	  Prianka	|   	181202	   |	   -	    |	   -	    |\n");
+	printf("  |	3	|	  Anastacia	|   	190303	   |	   -	    |	   -	    |\n");
+	printf("  |	4	|	  Yukita	|   	190604	   |	   -	    |	   -	    |\n");
+	printf("  |	5	|	  Cahaya	|   	200105	   |	   -	    |	   -	    |\n");
+	printf("  +-------------------------------------------------------------------------+\n");	
+	
+	printf("  +-------------------------------------------------------------------------+\n");		
+	printf("  |	No	|	  Nama		|   Kode Pegawai   |	Gaji Pokok	|	Bonus	|	Total Gaji	|\n");
+	printf("  +-------------------------------------------------------------------------+\n");	
+	
+	for(j=0; j<banyak; j++){
 	printf("  |	%d	|	  %s	  |   	%d	   |	   %s	    |\n", j+1, data2[j].namaPegawai, data2[j].kodePegawai, data2[j].absn);
 	}
 	printf("  +-------------------------------------------------------------------------+\n");	
 	
-	printf("\nIngin melanjutkan ke menu berikutnya? (y/n) --> ");
-	scanf("%s", &pilihan4);
+	printf("\nIngin mencetak rekapan? (y/n) --> ");
+	scanf("%s", &pilihan5);
 	
-		switch (pilihan4)
+		switch (pilihan5)
 	{
 		case 'Y':
 		case 'y':
@@ -303,11 +470,14 @@ void absen()
 		case 'N':
 		case 'n':
 		system ("cls");
-		menu();
+		menu_utama();
 		}
 	
-	}
-}
+		
+	/*Total gaji dari seluruh pegawai:
+	Nama pegawai		: (otomatis)
+	Rekap absensi		: (otomatis)
+	Total gaji pegawai		: (otomatis)
+	gaji pokok 3 jt
 
-
-
+}*/

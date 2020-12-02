@@ -7,6 +7,7 @@
 int i,j;
 int bonus_tawaran;
 
+void menu();
 void daftar_barang();
 int bonus(int bonus_tawaran, int i);
 void absen();
@@ -32,7 +33,14 @@ typedef struct{
 	
 int main()
 {
+	//agar tidak menyalahi aturan syntax yang berlaku
+	//maka diputuskan untuk membuat fungsi void_menu baru agar program dapat dikembalikan ke awal
+	menu();
+	return 0;
+}
 	
+void menu()
+{
 	int pilihan;
 		
 	printf("\t\t\t\t\t==================================\n"); 
@@ -73,7 +81,6 @@ int main()
 			break;
 		
 	}
-	return 0;
 }
 	
 void daftar_barang()
@@ -113,7 +120,7 @@ int bonus(int bonus_tawaran, int i)
 	int banyak;
 	char pilihan2;
 	char pilihan3;
-	//char pilihan4[2];
+	char pilihan4[2];
 	//char tambah_input1[2];
 	
 	printf("\t\t\t\t\t==================================\n"); 
@@ -182,7 +189,7 @@ int bonus(int bonus_tawaran, int i)
 		case 'N':
 		case 'n':
 		system ("cls");
-		main();
+		menu();
 	}
 	
 	return bonus_tawaran, i;
@@ -296,12 +303,11 @@ void absen()
 		case 'N':
 		case 'n':
 		system ("cls");
-		main();
+		menu();
 		}
 	
 	}
 }
-
 
 
 

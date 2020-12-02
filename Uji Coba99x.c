@@ -66,26 +66,26 @@ void login()
 	printf("Masukkan username anda  : "); scanf("%s", &user_name);
 	printf("Masukkan password	: "); scanf("%s", &password);
 		
-	
-		if (strcmp(user_name, "admin")==0 && strcmp(password, "deluxepass")==0 ){
-			printf("\nLogin Sukses");
-			system ("cls");
-			menu_utama();
-		}
 		
-		else if(strcmp(user_name, "pegawai")==0 && strcmp(password, "deluxepass")==0 ){
-			printf("\nLogin Sukses");
-			system ("cls");
-			menu_utama();
-		}
-		
-		else{
-			printf("\nAnda impostor yaaaa:v");
-			/*printf("\nUsername atau Password yang anda masukkan salah!");
-			printf("\nSilahkan mencoba kembali");*/
-			system ("cls");
-			goto login;
-		}
+			if (strcmp(user_name, "admin")==0 && strcmp(password, "deluxepass")==0 ){
+				printf("\nLogin Sukses");
+				system ("cls");
+				menu_utama();
+			}
+			
+			else if(strcmp(user_name, "pegawai")==0 && strcmp(password, "deluxepass")==0 ){
+				printf("\nLogin Sukses");
+				system ("cls");
+				menu_utama();
+			}
+			
+			else{
+				printf("\nAnda impostor yaaaa:v");
+				/*printf("\nUsername atau Password yang anda masukkan salah!");
+				printf("\nSilahkan mencoba kembali");*/
+				system ("cls");
+				goto login;
+			}
 }
 
 void menu_utama()
@@ -116,7 +116,8 @@ void menu_utama()
 	scanf("%d", &pilihan);
 	system ("cls");
 	
-	switch(pilihan){
+	switch(pilihan)
+	{
 		case 1 : 
 			daftar_barang(); 
 			break;
@@ -131,7 +132,7 @@ void menu_utama()
 		
 		default :
 			printf("\nPeriksa kembali inputan anda!");
-		}
+	}
 }
 
 
@@ -189,7 +190,6 @@ int bonus(int bonus_tawaran, int i)
 		printf("Harga barang yang dibeli : "); scanf("%d", &data1[i].hargaProduk);
 		fflush(stdin);
 		}
-		
 		system ("cls");
 	
 	
@@ -213,18 +213,18 @@ int bonus(int bonus_tawaran, int i)
 		printf("\nIngin melanjutkan ke menu berikutnya? (y/n) --> ");
 		scanf("%s", &pilihan3);
 			
-				switch (pilihan3)
-			{
-				case 'Y':
-				case 'y':
-				system ("cls");
-				absen();
-				
-				case 'N':
-				case 'n':
-				system ("cls");
-				menu_utama();
-			}
+		switch (pilihan3)
+		{
+			case 'Y':
+			case 'y':
+			system ("cls");
+			absen();
+			
+			case 'N':
+			case 'n':
+			system ("cls");
+			menu_utama();
+		}
 			
 	return data1[i].bonus_tawaran, i;
 }
@@ -260,19 +260,19 @@ int absen()
 	
 	switch (pilihan_bulan){
 		
-		case 1 :
-			system("cls");
-			goto absen_hrn;
-		
-		case 2 :
-			system("cls");
-			goto absen_bln;
-		
-		default :
-			printf("\nPilihan yang Anda masukkan tidak tersedia!");
-			printf("\nSilahkan coba kembali");
-			system("cls");
-			goto absen_menu;
+	case 1 :
+		system("cls");
+		goto absen_hrn;
+	
+	case 2 :
+		system("cls");
+		goto absen_bln;
+	
+	default :
+		printf("\nPilihan yang Anda masukkan tidak tersedia!");
+		printf("\nSilahkan coba kembali");
+		system("cls");
+		goto absen_menu;
 	}
 	
 	
@@ -337,18 +337,18 @@ int absen()
 		printf("\nIngin mengisi absen bulanan? (y/n) --> ");
 		scanf("%s", &pilihan4);
 		
-			switch (pilihan4)
-			{
-			case 'Y':
-			case 'y':
-			system ("cls");
-			goto absen_bln;
+		switch (pilihan4)
+		{
+		case 'Y':
+		case 'y':
+		system ("cls");
+		goto absen_bln;
 			
-			case 'N':
-			case 'n':
-			system ("cls");
-			menu_utama();
-			}
+		case 'N':
+		case 'n':
+		system ("cls");
+		menu_utama();
+		}
 	}
 	
 	else if(konfirmasi == 'n'){
@@ -402,22 +402,22 @@ int absen()
 	}
 	printf("  +---------------------------------------------------------------------------------------------------------+\n");
 	
-		printf("\nIngin melanjutkan ke menu berikutnya? (y/n) --> ");
-		scanf("%s", &pilihan5);
+	printf("\nIngin melanjutkan ke menu berikutnya? (y/n) --> ");
+	scanf("%s", &pilihan5);
+	
+		switch (pilihan5)
+	{
+		case 'Y':
+		case 'y':
+		system ("cls");
+		absen();
 		
-			switch (pilihan5)
-		{
-			case 'Y':
-			case 'y':
-			system ("cls");
-			absen();
-			
-			case 'N':
-			case 'n':
-			system ("cls");
-			menu_utama();
-		}
-		
+		case 'N':
+		case 'n':
+		system ("cls");
+		menu_utama();
+	}
+	
 }
 
 /*

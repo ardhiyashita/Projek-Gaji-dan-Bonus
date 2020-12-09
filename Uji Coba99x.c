@@ -59,9 +59,6 @@ void login()
 	char password[10];
 	
 	login:
-	printf("\t\t\t\t\t==================================\n"); 
-	printf("\t\t\t\t\t|	   TOKO DELUXE		 |\n"); 
-	printf("\t\t\t\t\t==================================\n\n");
 	
 	printf("Masukkan username anda  : "); scanf("%s", &user_name);
 	printf("Masukkan password	: "); scanf("%s", &password);

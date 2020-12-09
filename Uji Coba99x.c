@@ -59,6 +59,10 @@ void login()
 	char password[10];
 	
 	login:
+	printf("\t\t\t\t      Selamat Datang di Toko DELUXE\n");
+    	printf("\t\t\t\tJalan Raya Kampus Udayana, Jimbaran, Bali\n");
+    	printf("\t\t\t\t    Contact Person : +62 812 3456 7890\n");
+    	printf("\t\t\t\t          Instagram : @deluxe.id\n\n\n");
 	
 	printf("Masukkan username anda  : "); scanf("%s", &user_name);
 	printf("Masukkan password	: "); scanf("%s", &password);

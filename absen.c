@@ -484,3 +484,5 @@ void gaji_bonus(struct input1 baru1, struct input2 baru2)
 	Total gaji pegawai		: (otomatis)
 	gaji pokok 3 jt
 }*/
+
+//tes untuk mengedit file github

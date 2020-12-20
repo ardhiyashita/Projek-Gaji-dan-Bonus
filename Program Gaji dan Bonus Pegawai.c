@@ -95,7 +95,7 @@ int input_pegawai()
 	printf("  +--------------------------------------------------------+\n");	
 	printf("  |	1	|	  Ardhiya	|   	181201	   |\n");
 	printf("  |	2	|	  Prianka	|   	181202	   |\n");
-	printf("  |	3	|	  Anastacia	|   	190303	   |\n");
+	printf("  |	3	|	  Dextiro	|   	190303	   |\n");
 	printf("  |	4	|	  Yukita	|   	190604	   |\n");
 	printf("  |	5	|	  Cahaya	|   	200105	   |\n");
 	printf("  +--------------------------------------------------------+\n\n");
@@ -423,7 +423,7 @@ int gaji_bonus()
 				}
 				else if(kode_pegawai==190303){
 					
-					printf("Anastacia_190303 %s %s", copy, asctime (Sys_T));
+					printf("Dextiro_190303 %s %s", copy, asctime (Sys_T));
 					pegawai_tiga = *rekap_harian3 + 1;
 					*rekap_harian3 = pegawai_tiga;
 					goto menu4;
@@ -558,7 +558,7 @@ int gaji_bonus()
 		printf("  +-------------------------------------------------------------------------------------------------------------+\n");	
 		printf("  | 1  |  Ardhiya  |    181201    |     %-7d   |	%d	|\n", total, min_gaji1);
 		printf("  | 2  |  Prianka  |    181202    |     %-7d   |	%d	|\n", total2, min_gaji2);
-		printf("  | 3  | Anastacia |    190303    |     %-7d   |	%d	|\n", total3, min_gaji3);
+		printf("  | 3  |  Dextiro  |    190303    |     %-7d   |	%d	|\n", total3, min_gaji3);
 		printf("  | 4  |  Yukita   |    190604    |     %-7d   |	%d	|\n", total4, min_gaji4);
 		printf("  | 5  |  Cahaya   |    200105    |     %-7d   |	%d	|\n", total5, min_gaji5);
 		printf("  +-------------------------------------------------------------------------------------------------------------+\n\n");	
@@ -568,7 +568,7 @@ int gaji_bonus()
 		printf("  +-------------------------------------------------------------------------------------------------------------+\n");	
 		printf("  | 1  |  Ardhiya  |    181201    |	%d		| %d	|	%d		|\n", gaji_pokok, *total_bonus1, gaji_pokok+*total_bonus1-min_gaji1);
 		printf("  | 2  |  Prianka  |    181202    |	%d		| %d	|	%d		|\n", gaji_pokok, *total_bonus2, gaji_pokok+*total_bonus2-min_gaji2);
-		printf("  | 3  | Anastacia |    190303    |	%d		| %d	|	%d		|\n", gaji_pokok, *total_bonus3, gaji_pokok+*total_bonus3-min_gaji3);
+		printf("  | 3  |  Dextiro  |    190303    |	%d		| %d	|	%d		|\n", gaji_pokok, *total_bonus3, gaji_pokok+*total_bonus3-min_gaji3);
 		printf("  | 4  |  Yukita   |    190604    |	%d		| %d	|	%d		|\n", gaji_pokok, *total_bonus4, gaji_pokok+*total_bonus4-min_gaji4);
 		printf("  | 5  |  Cahaya   |    200105    |	%d		| %d	|	%d		|\n", gaji_pokok, *total_bonus5, gaji_pokok+*total_bonus5-min_gaji5);
 		printf("  +-------------------------------------------------------------------------------------------------------------+\n");	
@@ -607,7 +607,7 @@ int rekapan(){
 	printf("  +--------------------------------------------------------+\n");	
 	printf("  |	1	|	  Ardhiya	|   	%d	   |\n", *total_bonus1);
 	printf("  |	2	|	  Prianka	|   	%d	   |\n", *total_bonus2);
-	printf("  |	3	|	  Anastacia	|   	%d	   |\n", *total_bonus3);
+	printf("  |	3	|	  Dextiro	|   	%d	   |\n", *total_bonus3);
 	printf("  |	4	|	  Yukita	|   	%d	   |\n", *total_bonus4);
 	printf("  |	5	|	  Cahaya	|   	%d	   |\n", *total_bonus5);
 	printf("  +--------------------------------------------------------+\n");
@@ -842,7 +842,7 @@ int rekap_absen(){
 	printf("+-----------------------------------------------------------------+\n");
 	printf("|  1	   Ardhiya        %-8d       %d                %-7d  |\n", bulan, *rekap_harian1, total);
 	printf("|  2	   Prianka        %-8d       %d                %-7d  |\n", bulan2, *rekap_harian2, total2);
-	printf("|  3	   Anastacia      %-8d       %d                %-7d  |\n", bulan3, *rekap_harian3, total3);
+	printf("|  3	   Dextiro        %-8d       %d                %-7d  |\n", bulan3, *rekap_harian3, total3);
 	printf("|  4	   Yukita         %-8d       %d                %-7d  |\n", bulan4, *rekap_harian4, total4);
 	printf("|  5	   Cahaya         %-8d       %d                %-7d  |\n", bulan5, *rekap_harian5, total5);
 		

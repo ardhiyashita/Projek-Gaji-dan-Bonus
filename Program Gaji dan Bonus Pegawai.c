@@ -611,7 +611,7 @@ int rekapan(){
 	printf("  |	4	|	  Yukita	|   	%d	   |\n", *total_bonus4);
 	printf("  |	5	|	  Cahaya	|   	%d	   |\n", *total_bonus5);
 	printf("  +--------------------------------------------------------+\n");
-
+	
 	menu5:
 		printf("\n");
 		printf("1. Menambah inputan bonus\n");
@@ -847,6 +847,24 @@ int rekap_absen(){
 	printf("|  5	   Cahaya         %-8d       %d                %-7d  |\n", bulan5, *rekap_harian5, total5);
 		
 	printf("+-----------------------------------------------------------------+\n");
+	
+	FILE*absen;
+	absen = fopen ("Absen pegawai.txt", "w+");
+	
+	fprintf(absen,"\t\t\t\t\t==================================\n"); 
+	fprintf(absen,"\t\t\t\t\t|	   REKAP ABSEN		 |\n"); 
+	fprintf(absen,"\t\t\t\t\t==================================\n\n");
+	
+	fprintf(absen,"+-----------------------------------------------------------------+\n"); 
+	fprintf(absen,"| NO  |     NAMA     |	BULAN KE- | ABSEN_HARIAN  |  ABSEN_BULAN  |\n"); 
+	fprintf(absen,"+-----------------------------------------------------------------+\n");
+	fprintf(absen,"|  1	   Ardhiya        %-8d       %d                %-7d  |\n", bulan, *rekap_harian1, total);
+	fprintf(absen,"|  2	   Prianka        %-8d       %d                %-7d  |\n", bulan2, *rekap_harian2, total2);
+	fprintf(absen,"|  3	   Anastacia      %-8d       %d                %-7d  |\n", bulan3, *rekap_harian3, total3);
+	fprintf(absen,"|  4	   Yukita         %-8d       %d                %-7d  |\n", bulan4, *rekap_harian4, total4);
+	fprintf(absen,"|  5	   Cahaya         %-8d       %d                %-7d  |\n", bulan5, *rekap_harian5, total5);	
+	fprintf(absen,"+-----------------------------------------------------------------+\n");
+	fclose(absen);
 	
 	menu6:
 		printf("\n");

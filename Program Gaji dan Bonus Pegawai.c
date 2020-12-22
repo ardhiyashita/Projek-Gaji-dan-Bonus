@@ -43,6 +43,7 @@ int absen_bulanan5();
 int rekapan();
 int rekap_absen();
 int minus_gaji();
+int rekapgaji();
 
 int main()
 {

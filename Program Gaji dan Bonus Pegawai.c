@@ -953,3 +953,4 @@ int rekapgaji(){
 	system("cls");
 	menu_utama();
 }
+}

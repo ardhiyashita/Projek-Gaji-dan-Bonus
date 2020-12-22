@@ -263,7 +263,7 @@ int gaji_bonus()
 		}
 		else if(kode_pegawai==190303){
 						
-			printf("Pegawai Anastacia_190303\n");
+			printf("Pegawai Dextiro_190303\n");
 			printf("Masukkan nama pelanggan: "); scanf("%s", &nama_pelanggan3);
 			printf("Masukkan nama barang   : "); scanf("%s", &nama_barang3);
 			printf("Masukkan harga barang  : "); scanf("%d", &harga_barang3);	

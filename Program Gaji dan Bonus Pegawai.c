@@ -1033,3 +1033,4 @@ int minus_gaji(){
 			min_gaji5 = 0;
 		}
 	}
+}

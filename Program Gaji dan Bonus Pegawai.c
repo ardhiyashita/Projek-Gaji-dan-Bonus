@@ -57,7 +57,7 @@ int main()
     printf("\t\t\t\t    Contact Person : +62 812 3456 7890\n");
     printf("\t\t\t\t          Instagram : @deluxe.id\n\n\n");
 	
-	printf("Halaman ini merupakan menu login program\n");
+	printf("LOGIN PROGRAM\n\n");
 	printf("Masukkan username anda  : "); scanf("%s", &user_name);
 	printf("Masukkan password	: "); scanf("%s", &password);
 		
@@ -101,7 +101,7 @@ int input_pegawai()
 	printf("  |	5	|	  Cahaya	|   	200105	   |\n");
 	printf("  +--------------------------------------------------------+\n\n");
 
-	printf("Halaman ini merupakan menu login pegawai\n");
+	printf("LOGIN PEGAWAI\n");
 	printf("Silahkan masukkan kode pegawai anda untuk melakukan login!\n\n"); 
 	printf("Kode pegawai : "); scanf("%d", &kode_pegawai);
 	
@@ -337,7 +337,7 @@ int gaji_bonus()
 			
 			case 2 :
 			system ("cls");
-			gaji_bonus();
+			gaji_bonus(pilihan == 2);
 			
 			case 3 :
 			system ("cls");
@@ -519,22 +519,27 @@ int gaji_bonus()
 	
 		menu7:
 			printf("\n");
-			printf("1. Koreksi input absensi bulanan\n");
-			printf("2. Lihat hasil rekapan\n");
-			printf("3. Kembali ke menu utama\n");
+			printf("1. Lanjut ke menu berikutnya\n");
+			printf("2. Koreksi input absensi bulanan\n");
+			printf("3. Lihat hasil rekapan\n");
+			printf("4. Kembali ke menu utama\n");
 			printf("Piihan Anda: "); scanf("%d", &pilihan7);
 			
 			switch (pilihan7)
 			{
 				case 1 :
 				system ("cls");
-				goto absen_bln;
+				gaji_bonus(pilihan==4);
 				
 				case 2 :
 				system ("cls");
-				rekap_absen();
+				goto absen_bln;
 				
 				case 3 :
+				system ("cls");
+				rekap_absen();
+				
+				case 4 :
 				system("cls");
 				menu_utama();
 			}
@@ -551,7 +556,7 @@ int gaji_bonus()
 		printf("\t\t\t\t\t|	   GAJI PEGAWAI		|\n"); 
 		printf("\t\t\t\t\t==================================\n\n");
 		
-		printf("Pastikan Anda mengakses menu ini pada akhir bulan!\n");
+		printf("PASTIKAN ANDA MENGAKSES MENU INI PADA AKHIR BULAN!\n\n");
 		
 		printf("Berikut Daftar Nama Pegawai dan Detail Gaji Per-Orang : \n");
 		printf("  +-------------------------------------------------------------------------------------------------------------+\n");		
@@ -623,7 +628,7 @@ int rekapan(){
 		{
 			case 1 :
 			system ("cls");
-			gaji_bonus();
+			gaji_bonus(pilihan == 2);
 						
 			case 2 :
 			system("cls");

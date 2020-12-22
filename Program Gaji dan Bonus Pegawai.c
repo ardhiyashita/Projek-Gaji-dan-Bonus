@@ -75,9 +75,8 @@ int main()
 			}
 			
 			else{
-				printf("\nAnda impostor yaaaa:v");
-				/*printf("\nUsername atau Password yang anda masukkan salah!");
-				printf("\nSilahkan mencoba kembali");*/
+				printf("\nUsername atau Password yang anda masukkan salah!");
+				printf("\nSilahkan mencoba kembali");
 				system ("cls");
 				goto login;
 			}
@@ -122,6 +121,7 @@ int input_pegawai()
 
 int menu_utama(){
 	
+	utama:
 	printf("\t\t\t\t\t==================================\n"); 
 	printf("\t\t\t\t\t|	   TOKO DELUXE		 |\n"); 
 	printf("\t\t\t\t\t==================================\n\n");
@@ -174,6 +174,9 @@ int menu_utama(){
 
 		default :
 			printf("\nPeriksa kembali inputan anda!");
+			system("cls");
+			goto utama;
+			
 	}
 	return pilihan;
 }
@@ -184,6 +187,7 @@ int gaji_bonus()
 	
 	if(pilihan==1)
 	{
+		satu:
 		printf("\t\t\t\t\t==================================\n"); 
 		printf("\t\t\t\t\t|   DAFTAR NAMA DAN HARGA BARANG |\n"); 
 		printf("\t\t\t\t\t==================================\n\n");
@@ -209,6 +213,11 @@ int gaji_bonus()
 			case 'n':
 			system ("cls");
 			menu_utama();
+			
+			default :
+			printf("\nPeriksa kembali inputan anda!");
+			system("cls");
+			goto satu;
 		}
 	}
 	
@@ -346,6 +355,11 @@ int gaji_bonus()
 			case 4 :
 			system("cls");
 			menu_utama();
+				
+			default :
+			printf("\nPeriksa kembali inputan anda!");
+			system("cls");
+			goto menu1:
 		}
 	}
 	
@@ -454,6 +468,13 @@ int gaji_bonus()
 			case 'n':
 			system ("cls");
 			menu_utama();
+				
+			default :
+			printf("\nPilihan yang Anda masukkan tidak tersedia!");
+			printf("\nSilahkan coba kembali");
+			system("cls");
+			goto absen_hrn;
+				
 		}
 		/* asctime berfungsi untuk mengubah struct tm menjadi string c dengan format Www Mmm dd hh:mm:ss yyyy */
 		
@@ -477,6 +498,12 @@ int gaji_bonus()
 			case 3 :
 			system("cls");
 			menu_utama();
+				
+			default :
+			printf("\nPilihan yang Anda masukkan tidak tersedia!");
+			printf("\nSilahkan coba kembali");
+			system("cls");
+			goto menu4;
 		}		
 		
 		absen_bln:
@@ -515,6 +542,12 @@ int gaji_bonus()
 			case 'n':
 			system ("cls");
 			menu_utama();
+				
+			default :
+			printf("\nPilihan yang Anda masukkan tidak tersedia!");
+			printf("\nSilahkan coba kembali");
+			system("cls");
+			goto absen_bln;
 		}
 	
 		menu7:
@@ -542,6 +575,12 @@ int gaji_bonus()
 				case 4 :
 				system("cls");
 				menu_utama();
+				
+				default :
+				printf("\nPilihan yang Anda masukkan tidak tersedia!");
+				printf("\nSilahkan coba kembali");
+				system("cls");
+				goto menu7;
 			}
 		
 	}
@@ -587,10 +626,19 @@ int gaji_bonus()
 				case 'Y':
 				case 'y':
 				system ("cls");
+				rekapgaji();
 				
 				case 'N':
 				case 'n':
 				system ("cls");
+				menu_utama();
+				
+				default :
+				printf("\nPilihan yang Anda masukkan tidak tersedia!");
+				printf("\nSilahkan coba kembali");
+				system("cls");
+				goto gaji_pegawai;
+				
 			}
 		
 			
@@ -633,6 +681,12 @@ int rekapan(){
 			case 2 :
 			system("cls");
 			menu_utama();
+				
+			default :
+			printf("\nPilihan yang Anda masukkan tidak tersedia!");
+			printf("\nSilahkan coba kembali");
+			system("cls");
+			rekapan();
 		}
 }
 
@@ -885,6 +939,12 @@ int rekap_absen(){
 						
 			case 'N' :
 			case 'n' :
+			system("cls");
+			goto rekap_absen;
+			
+			default :
+			printf("\nPilihan yang Anda masukkan tidak tersedia!");
+			printf("\nSilahkan coba kembali");
 			system("cls");
 			goto rekap_absen;
 		}		

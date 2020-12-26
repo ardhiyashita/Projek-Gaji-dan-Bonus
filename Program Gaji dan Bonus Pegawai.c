@@ -238,6 +238,14 @@ int gaji_bonus()
 						
 			printf("Pegawai Ardhiya_181201\n");
 			printf("Masukkan nama pelanggan: "); scanf("%s", &nama_pelanggan1);
+			
+			printf("\nNama Produk Tersedia: \n\n");
+			printf("  #1 ParfumA	Rp.30.000\n");
+			printf("  #2 ParfumB  	Rp.40.000\n");
+			printf("  #3 ParfumC  	Rp.48.000\n");
+			printf("  #4 ParfumD 	Rp.60.000\n");
+			printf("  #5 ParfumE 	Rp.35.000\n\n");
+			
 			printf("Masukkan nama barang   : "); scanf("%s", &nama_barang1);
 			printf("Masukkan harga barang  : "); scanf("%d", &harga_barang1);
 			
@@ -256,6 +264,14 @@ int gaji_bonus()
 			
 			printf("Pegawai Prianka_181202\n");
 			printf("Masukkan nama pelanggan: "); scanf("%s", &nama_pelanggan2);
+			
+			printf("\nNama Produk Tersedia: \n\n");
+			printf("  #1 ParfumA	Rp.30.000\n");
+			printf("  #2 ParfumB  	Rp.40.000\n");
+			printf("  #3 ParfumC  	Rp.48.000\n");
+			printf("  #4 ParfumD 	Rp.60.000\n");
+			printf("  #5 ParfumE 	Rp.35.000\n\n");
+			
 			printf("Masukkan nama barang   : "); scanf("%s", &nama_barang2);
 			printf("Masukkan harga barang  : "); scanf("%d", &harga_barang2);	
 			
@@ -274,6 +290,14 @@ int gaji_bonus()
 						
 			printf("Pegawai Dextiro_190303\n");
 			printf("Masukkan nama pelanggan: "); scanf("%s", &nama_pelanggan3);
+			
+			printf("\nNama Produk Tersedia: \n\n");
+			printf("  #1 ParfumA	Rp.30.000\n");
+			printf("  #2 ParfumB  	Rp.40.000\n");
+			printf("  #3 ParfumC  	Rp.48.000\n");
+			printf("  #4 ParfumD 	Rp.60.000\n");
+			printf("  #5 ParfumE 	Rp.35.000\n\n");
+			
 			printf("Masukkan nama barang   : "); scanf("%s", &nama_barang3);
 			printf("Masukkan harga barang  : "); scanf("%d", &harga_barang3);	
 						
@@ -292,6 +316,14 @@ int gaji_bonus()
 						
 			printf("Pegawai Yukita_190604\n");
 			printf("Masukkan nama pelanggan: "); scanf("%s", &nama_pelanggan4);
+			
+			printf("\nNama Produk Tersedia: \n\n");
+			printf("  #1 ParfumA	Rp.30.000\n");
+			printf("  #2 ParfumB  	Rp.40.000\n");
+			printf("  #3 ParfumC  	Rp.48.000\n");
+			printf("  #4 ParfumD 	Rp.60.000\n");
+			printf("  #5 ParfumE 	Rp.35.000\n\n");
+			
 			printf("Masukkan nama barang   : "); scanf("%s", &nama_barang4);
 			printf("Masukkan harga barang  : "); scanf("%d", &harga_barang4);	
 			
@@ -310,6 +342,14 @@ int gaji_bonus()
 						
 			printf("Pegawai Cahaya_200105\n");
 			printf("Masukkan nama pelanggan: "); scanf("%s", &nama_pelanggan5);
+			
+			printf("\nNama Produk Tersedia: \n\n");
+			printf("  #1 ParfumA	Rp.30.000\n");
+			printf("  #2 ParfumB  	Rp.40.000\n");
+			printf("  #3 ParfumC  	Rp.48.000\n");
+			printf("  #4 ParfumD 	Rp.60.000\n");
+			printf("  #5 ParfumE 	Rp.35.000\n\n");
+			
 			printf("Masukkan nama barang   : "); scanf("%s", &nama_barang5);
 			printf("Masukkan harga barang  : "); scanf("%d", &harga_barang5);	
 			

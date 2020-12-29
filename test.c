@@ -43,7 +43,6 @@ int absen_bulanan5();
 int rekapan();
 int rekap_absen();
 int minus_gaji();
-int rekapgaji();
 
 int main()
 {
@@ -57,8 +56,8 @@ int main()
     printf("\t\t\t\t    Contact Person : +62 812 3456 7890\n");
     printf("\t\t\t\t          Instagram : @deluxe.id\n\n\n");
 	
-	printf("Login:\n\n");
-	printf("Masukkan username	: "); scanf("%s", &user_name);
+	printf("LOGIN PROGRAM\n\n");
+	printf("Masukkan username anda  : "); scanf("%s", &user_name);
 	printf("Masukkan password	: "); scanf("%s", &password);
 		
 		
@@ -75,9 +74,8 @@ int main()
 			}
 			
 			else{
-				printf("\nAnda impostor yaaaa:v");
-				/*printf("\nUsername atau Password yang anda masukkan salah!");
-				printf("\nSilahkan mencoba kembali");*/
+				printf("\nUsername atau Password yang anda masukkan salah!");
+				printf("\nSilahkan mencoba kembali");
 				system ("cls");
 				goto login;
 			}
@@ -96,11 +94,12 @@ int input_pegawai()
 	printf("  +--------------------------------------------------------+\n");	
 	printf("  |	1	|	  Ardhiya	|   	181201	   |\n");
 	printf("  |	2	|	  Prianka	|   	181202	   |\n");
-	printf("  |	3	|	  Anastacia	|   	190303	   |\n");
+	printf("  |	3	|	  Dextiro	|   	190303	   |\n");
 	printf("  |	4	|	  Yukita	|   	190604	   |\n");
 	printf("  |	5	|	  Cahaya	|   	200105	   |\n");
 	printf("  +--------------------------------------------------------+\n\n");
 
+	printf("LOGIN PEGAWAI\n");
 	printf("Silahkan masukkan kode pegawai anda untuk melakukan login!\n\n"); 
 	printf("Kode pegawai : "); scanf("%d", &kode_pegawai);
 	
@@ -121,6 +120,7 @@ int input_pegawai()
 
 int menu_utama(){
 	
+	utama:
 	printf("\t\t\t\t\t==================================\n"); 
 	printf("\t\t\t\t\t|	   TOKO DELUXE		 |\n"); 
 	printf("\t\t\t\t\t==================================\n\n");
@@ -173,6 +173,9 @@ int menu_utama(){
 
 		default :
 			printf("\nPeriksa kembali inputan anda!");
+			system("cls");
+			goto utama;
+			
 	}
 	return pilihan;
 }
@@ -183,6 +186,7 @@ int gaji_bonus()
 	
 	if(pilihan==1)
 	{
+		satu:
 		printf("\t\t\t\t\t==================================\n"); 
 		printf("\t\t\t\t\t|   DAFTAR NAMA DAN HARGA BARANG |\n"); 
 		printf("\t\t\t\t\t==================================\n\n");
@@ -208,6 +212,11 @@ int gaji_bonus()
 			case 'n':
 			system ("cls");
 			menu_utama();
+			
+			default :
+			printf("\nPeriksa kembali inputan anda!");
+			system("cls");
+			goto satu;
 		}
 	}
 	
@@ -227,8 +236,16 @@ int gaji_bonus()
 	
 		if(kode_pegawai==181201){
 						
-			printf("Pegawai: Ardhiya_181201\n\n");
+			printf("Pegawai Ardhiya_181201\n");
 			printf("Masukkan nama pelanggan: "); scanf("%s", &nama_pelanggan1);
+			
+			printf("\nNama Produk Tersedia: \n\n");
+			printf("  #1 ParfumA	Rp.30.000\n");
+			printf("  #2 ParfumB  	Rp.40.000\n");
+			printf("  #3 ParfumC  	Rp.48.000\n");
+			printf("  #4 ParfumD 	Rp.60.000\n");
+			printf("  #5 ParfumE 	Rp.35.000\n\n");
+			
 			printf("Masukkan nama barang   : "); scanf("%s", &nama_barang1);
 			printf("Masukkan harga barang  : "); scanf("%d", &harga_barang1);
 			
@@ -245,8 +262,16 @@ int gaji_bonus()
 		}
 		else if(kode_pegawai==181202){
 			
-			printf("Pegawai: Prianka_181202\n\n");
+			printf("Pegawai Prianka_181202\n");
 			printf("Masukkan nama pelanggan: "); scanf("%s", &nama_pelanggan2);
+			
+			printf("\nNama Produk Tersedia: \n\n");
+			printf("  #1 ParfumA	Rp.30.000\n");
+			printf("  #2 ParfumB  	Rp.40.000\n");
+			printf("  #3 ParfumC  	Rp.48.000\n");
+			printf("  #4 ParfumD 	Rp.60.000\n");
+			printf("  #5 ParfumE 	Rp.35.000\n\n");
+			
 			printf("Masukkan nama barang   : "); scanf("%s", &nama_barang2);
 			printf("Masukkan harga barang  : "); scanf("%d", &harga_barang2);	
 			
@@ -263,8 +288,16 @@ int gaji_bonus()
 		}
 		else if(kode_pegawai==190303){
 						
-			printf("Pegawai: Anastacia_190303\n\n");
+			printf("Pegawai Dextiro_190303\n");
 			printf("Masukkan nama pelanggan: "); scanf("%s", &nama_pelanggan3);
+			
+			printf("\nNama Produk Tersedia: \n\n");
+			printf("  #1 ParfumA	Rp.30.000\n");
+			printf("  #2 ParfumB  	Rp.40.000\n");
+			printf("  #3 ParfumC  	Rp.48.000\n");
+			printf("  #4 ParfumD 	Rp.60.000\n");
+			printf("  #5 ParfumE 	Rp.35.000\n\n");
+			
 			printf("Masukkan nama barang   : "); scanf("%s", &nama_barang3);
 			printf("Masukkan harga barang  : "); scanf("%d", &harga_barang3);	
 						
@@ -281,8 +314,16 @@ int gaji_bonus()
 		}
 		else if(kode_pegawai==190604){
 						
-			printf("Pegawai: Yukita_190604\n\n");
+			printf("Pegawai Yukita_190604\n");
 			printf("Masukkan nama pelanggan: "); scanf("%s", &nama_pelanggan4);
+			
+			printf("\nNama Produk Tersedia: \n\n");
+			printf("  #1 ParfumA	Rp.30.000\n");
+			printf("  #2 ParfumB  	Rp.40.000\n");
+			printf("  #3 ParfumC  	Rp.48.000\n");
+			printf("  #4 ParfumD 	Rp.60.000\n");
+			printf("  #5 ParfumE 	Rp.35.000\n\n");
+			
 			printf("Masukkan nama barang   : "); scanf("%s", &nama_barang4);
 			printf("Masukkan harga barang  : "); scanf("%d", &harga_barang4);	
 			
@@ -299,8 +340,16 @@ int gaji_bonus()
 		}
 		else if(kode_pegawai==200105){
 						
-			printf("Pegawai: Cahaya_200105\n\n");
+			printf("Pegawai Cahaya_200105\n");
 			printf("Masukkan nama pelanggan: "); scanf("%s", &nama_pelanggan5);
+			
+			printf("\nNama Produk Tersedia: \n\n");
+			printf("  #1 ParfumA	Rp.30.000\n");
+			printf("  #2 ParfumB  	Rp.40.000\n");
+			printf("  #3 ParfumC  	Rp.48.000\n");
+			printf("  #4 ParfumD 	Rp.60.000\n");
+			printf("  #5 ParfumE 	Rp.35.000\n\n");
+			
 			printf("Masukkan nama barang   : "); scanf("%s", &nama_barang5);
 			printf("Masukkan harga barang  : "); scanf("%d", &harga_barang5);	
 			
@@ -336,7 +385,7 @@ int gaji_bonus()
 			
 			case 2 :
 			system ("cls");
-			gaji_bonus();
+			gaji_bonus(pilihan == 2);
 			
 			case 3 :
 			system ("cls");
@@ -345,11 +394,20 @@ int gaji_bonus()
 			case 4 :
 			system("cls");
 			menu_utama();
+				
+			default :
+			printf("\nPeriksa kembali inputan anda!");
+			system("cls");
+			goto menu1;
 		}
 	}
 	
 	else if(pilihan==3)
 	{
+		FILE*absen =fopen("Absen pegawai.txt", "w+");
+		fclose(absen);
+		getchar();
+		return;
 		
 		absen_pegawai:
 		printf("\t\t\t\t\t==================================\n"); 
@@ -423,7 +481,7 @@ int gaji_bonus()
 				}
 				else if(kode_pegawai==190303){
 					
-					printf("Anastacia_190303 %s %s", copy, asctime (Sys_T));
+					printf("Dextiro_190303 %s %s", copy, asctime (Sys_T));
 					pegawai_tiga = *rekap_harian3 + 1;
 					*rekap_harian3 = pegawai_tiga;
 					goto menu4;
@@ -453,6 +511,13 @@ int gaji_bonus()
 			case 'n':
 			system ("cls");
 			menu_utama();
+				
+			default :
+			printf("\nPilihan yang Anda masukkan tidak tersedia!");
+			printf("\nSilahkan coba kembali");
+			system("cls");
+			goto absen_hrn;
+				
 		}
 		/* asctime berfungsi untuk mengubah struct tm menjadi string c dengan format Www Mmm dd hh:mm:ss yyyy */
 		
@@ -476,6 +541,12 @@ int gaji_bonus()
 			case 3 :
 			system("cls");
 			menu_utama();
+				
+			default :
+			printf("\nPilihan yang Anda masukkan tidak tersedia!");
+			printf("\nSilahkan coba kembali");
+			system("cls");
+			goto menu4;
 		}		
 		
 		absen_bln:
@@ -514,6 +585,12 @@ int gaji_bonus()
 			case 'n':
 			system ("cls");
 			menu_utama();
+				
+			default :
+			printf("\nPilihan yang Anda masukkan tidak tersedia!");
+			printf("\nSilahkan coba kembali");
+			system("cls");
+			goto absen_bln;
 		}
 	
 		menu7:
@@ -525,6 +602,10 @@ int gaji_bonus()
 			
 			switch (pilihan7)
 			{
+				/*case 1 :
+				system ("cls");
+				gaji_bonus(pilihan==4);*/
+				
 				case 1 :
 				system ("cls");
 				goto absen_bln;
@@ -536,6 +617,12 @@ int gaji_bonus()
 				case 3 :
 				system("cls");
 				menu_utama();
+				
+				default :
+				printf("\nPilihan yang Anda masukkan tidak tersedia!");
+				printf("\nSilahkan coba kembali");
+				system("cls");
+				goto menu7;
 			}
 		
 	}
@@ -544,51 +631,112 @@ int gaji_bonus()
 	{
 		minus_gaji();
 		int gaji_pokok = 3000000;
-		
+		FILE*rekapgaji =fopen("Gaji pegawai.txt", "w+");
+		fclose(rekapgaji);
+		getchar();
+		return;
 		gaji_pegawai:
+		
 		printf("\t\t\t\t\t==================================\n"); 
 		printf("\t\t\t\t\t|	   GAJI PEGAWAI		|\n"); 
 		printf("\t\t\t\t\t==================================\n\n");
 		
-		printf("Pastikan Anda mengakses menu ini pada akhir bulan!\n");
+		printf("PASTIKAN ANDA MENGAKSES MENU INI PADA AKHIR BULAN!\n\n");
 		
 		printf("Berikut Daftar Nama Pegawai dan Detail Gaji Per-Orang : \n");
-		printf("  +---------------------------------------------------------------------+\n");		
-		printf("  | No |   Nama    | Kode Pegawai | Rekap Absensi | Pengurangan Gaji	|\n");
-		printf("  +---------------------------------------------------------------------+\n");	
-		printf("  | 1  |  Ardhiya  |    181201    |     %-7d   |   	     %d  	|\n", total, min_gaji1);
-		printf("  | 2  |  Prianka  |    181202    |     %-7d   |   	     %d  	|\n", total2, min_gaji2);
-		printf("  | 3  | Anastacia |    190303    |     %-7d   |   	     %d  	|\n", total3, min_gaji3);
-		printf("  | 4  |  Yukita   |    190604    |     %-7d   |   	     %d  	|\n", total4, min_gaji4);
-		printf("  | 5  |  Cahaya   |    200105    |     %-7d   |   	     %d  	|\n", total5, min_gaji5);
-		printf("  +---------------------------------------------------------------------+\n\n");	
+		printf("  +-------------------------------------------------------------------------------------------------------------+\n");		
+		printf("  | No |   Nama    | Kode Pegawai | Rekap Absensi | Pengurangan Gaji |\n");
+		printf("  +-------------------------------------------------------------------------------------------------------------+\n");	
+		printf("  | 1  |  Ardhiya  |    181201    |     %-7d   |	%d	|\n", total, min_gaji1);
+		printf("  | 2  |  Prianka  |    181202    |     %-7d   |	%d	|\n", total2, min_gaji2);
+		printf("  | 3  |  Dextiro  |    190303    |     %-7d   |	%d	|\n", total3, min_gaji3);
+		printf("  | 4  |  Yukita   |    190604    |     %-7d   |	%d	|\n", total4, min_gaji4);
+		printf("  | 5  |  Cahaya   |    200105    |     %-7d   |	%d	|\n", total5, min_gaji5);
+		printf("  +-------------------------------------------------------------------------------------------------------------+\n\n");	
 		
-		printf("  +-------------------------------------------------------------------------------------+\n");		
+		printf("  +-------------------------------------------------------------------------------------------------------------+\n");		
 		printf("  | No |   Nama    | Kode Pegawai |	Gaji Pokok	|   Bonus |	Total Gaji	|\n");
-		printf("  +-------------------------------------------------------------------------------------+\n");	
+		printf("  +-------------------------------------------------------------------------------------------------------------+\n");	
 		printf("  | 1  |  Ardhiya  |    181201    |	%d		| %d	|	%d		|\n", gaji_pokok, *total_bonus1, gaji_pokok+*total_bonus1-min_gaji1);
 		printf("  | 2  |  Prianka  |    181202    |	%d		| %d	|	%d		|\n", gaji_pokok, *total_bonus2, gaji_pokok+*total_bonus2-min_gaji2);
-		printf("  | 3  | Anastacia |    190303    |	%d		| %d	|	%d		|\n", gaji_pokok, *total_bonus3, gaji_pokok+*total_bonus3-min_gaji3);
+		printf("  | 3  |  Dextiro  |    190303    |	%d		| %d	|	%d		|\n", gaji_pokok, *total_bonus3, gaji_pokok+*total_bonus3-min_gaji3);
 		printf("  | 4  |  Yukita   |    190604    |	%d		| %d	|	%d		|\n", gaji_pokok, *total_bonus4, gaji_pokok+*total_bonus4-min_gaji4);
 		printf("  | 5  |  Cahaya   |    200105    |	%d		| %d	|	%d		|\n", gaji_pokok, *total_bonus5, gaji_pokok+*total_bonus5-min_gaji5);
-		printf("  +-------------------------------------------------------------------------------------+\n");	
+		printf("  +-------------------------------------------------------------------------------------------------------------+\n");	
 		
 		printf("\nIngin mencetak rekapan? (y/n) --> ");
 		scanf("%s", &pilihan5);
 		
-			switch (pilihan5)
+			if(pilihan5 == 'Y' || pilihan5 == 'y')
 			{
-				case 'Y':
-				case 'y':
-				system ("cls");
-				rekapgaji();
 				
-				case 'N':
-				case 'n':
-				system ("cls");
+				printf("Rekap gaji sudah dicetak ke dalam file Gaji Pegawai.txt, mohon untuk di cek kembali.");
+					FILE*rekapgaji;
+					rekapgaji = fopen ("Gaji Pegawai.txt", "w+");
+				
+					fprintf(rekapgaji,"\t\t\t\t\t==================================\n"); 
+					fprintf(rekapgaji,"\t\t\t\t\t|	   GAJI PEGAWAI		|\n"); 
+					fprintf(rekapgaji,"\t\t\t\t\t==================================\n\n");
+			
+					fprintf(rekapgaji,"  +---------------------------------------------------------------------+\n");		
+					fprintf(rekapgaji,"  | No |   Nama    | Kode Pegawai | Rekap Absensi | Pengurangan Gaji	|\n");
+					fprintf(rekapgaji,"  +---------------------------------------------------------------------+\n");	
+					fprintf(rekapgaji,"  | 1  |  Ardhiya  |    181201    |     %-7d   |   	     %d  	|\n", total, min_gaji1);
+					fprintf(rekapgaji,"  | 2  |  Prianka  |    181202    |     %-7d   |   	     %d  	|\n", total2, min_gaji2);
+					fprintf(rekapgaji,"  | 3  |  Dextiro  |    190303    |     %-7d   |   	     %d  	|\n", total3, min_gaji3);
+					fprintf(rekapgaji,"  | 4  |  Yukita   |    190604    |     %-7d   |   	     %d  	|\n", total4, min_gaji4);
+					fprintf(rekapgaji,"  | 5  |  Cahaya   |    200105    |     %-7d   |   	     %d  	|\n", total5, min_gaji5);
+					fprintf(rekapgaji,"  +---------------------------------------------------------------------+\n\n");	
+					
+					fprintf(rekapgaji,"  +-------------------------------------------------------------------------------------+\n");		
+					fprintf(rekapgaji,"  | No |   Nama    | Kode Pegawai |	Gaji Pokok	|   Bonus |	Total Gaji	|\n");
+					fprintf(rekapgaji,"  +-------------------------------------------------------------------------------------+\n");	
+					fprintf(rekapgaji,"  | 1  |  Ardhiya  |    181201    |	%d		| %d	|	%d		|\n", gaji_pokok, *total_bonus1, gaji_pokok+*total_bonus1-min_gaji1);
+					fprintf(rekapgaji,"  | 2  |  Prianka  |    181202    |	%d		| %d	|	%d		|\n", gaji_pokok, *total_bonus2, gaji_pokok+*total_bonus2-min_gaji2);
+					fprintf(rekapgaji,"  | 3  |  Dextiro  |    190303    |	%d		| %d	|	%d		|\n", gaji_pokok, *total_bonus3, gaji_pokok+*total_bonus3-min_gaji3);
+					fprintf(rekapgaji,"  | 4  |  Yukita   |    190604    |	%d		| %d	|	%d		|\n", gaji_pokok, *total_bonus4, gaji_pokok+*total_bonus4-min_gaji4);
+					fprintf(rekapgaji,"  | 5  |  Cahaya   |    200105    |	%d		| %d	|	%d		|\n", gaji_pokok, *total_bonus5, gaji_pokok+*total_bonus5-min_gaji5);
+					fprintf(rekapgaji,"  +-------------------------------------------------------------------------------------+\n");	
+					fclose(rekapgaji);
+					
+					goto menu9;
+			}
+			
+			else if(pilihan5 == 'N' || pilihan5 == 'n'){
+				
+				system("cls");
 				menu_utama();
 			}
+			else{
+				printf("\nPilihan yang Anda masukkan tidak tersedia!");
+				printf("\nSilahkan coba kembali");
+				system("cls");
+				goto gaji_pegawai;
+				
+			}
 		
+		menu9:
+		printf("\n");
+		printf("1. Keluar program\n");
+		printf("2. Kembali ke menu utama\n");
+		printf("Piihan Anda: "); scanf("%d", &pilihan9);
+		
+		switch (pilihan9)
+		{
+			case 1 :
+			system ("cls");
+			exit(0);
+						
+			case 2 :
+			system("cls");
+			menu_utama();
+				
+			default :
+			printf("\nPilihan yang Anda masukkan tidak tersedia!");
+			printf("\nSilahkan coba kembali");
+			system("cls");
+			goto menu9;
+		}
 			
 		/*Total gaji dari seluruh pegawai:
 		Nama pegawai		: (otomatis)
@@ -601,7 +749,7 @@ int gaji_bonus()
 int rekapan(){
 	
 	printf("\t\t\t\t\t==================================\n"); 
-	printf("\t\t\t\t\t|	   REKAP BONUS		 |\n"); 
+	printf("\t\t\t\t\t|	   REKAP BONUS		|\n"); 
 	printf("\t\t\t\t\t==================================\n\n");
 	
 	printf("  +--------------------------------------------------------+\n");		
@@ -609,11 +757,11 @@ int rekapan(){
 	printf("  +--------------------------------------------------------+\n");	
 	printf("  |	1	|	  Ardhiya	|   	%d	   |\n", *total_bonus1);
 	printf("  |	2	|	  Prianka	|   	%d	   |\n", *total_bonus2);
-	printf("  |	3	|	  Anastacia	|   	%d	   |\n", *total_bonus3);
+	printf("  |	3	|	  Dextiro	|   	%d	   |\n", *total_bonus3);
 	printf("  |	4	|	  Yukita	|   	%d	   |\n", *total_bonus4);
 	printf("  |	5	|	  Cahaya	|   	%d	   |\n", *total_bonus5);
 	printf("  +--------------------------------------------------------+\n");
-
+	
 	menu5:
 		printf("\n");
 		printf("1. Menambah inputan bonus\n");
@@ -624,11 +772,17 @@ int rekapan(){
 		{
 			case 1 :
 			system ("cls");
-			gaji_bonus();
+			gaji_bonus(pilihan == 2);
 						
 			case 2 :
 			system("cls");
 			menu_utama();
+				
+			default :
+			printf("\nPilihan yang Anda masukkan tidak tersedia!");
+			printf("\nSilahkan coba kembali");
+			system("cls");
+			rekapan();
 		}
 }
 
@@ -835,21 +989,22 @@ int absen_bulanan5(){
 int rekap_absen(){
 	
 	rekap_absen:
+		
 	printf("\t\t\t\t\t==================================\n"); 
 	printf("\t\t\t\t\t|	   REKAP ABSEN		 |\n"); 
 	printf("\t\t\t\t\t==================================\n\n");
-	
+
 	printf("+-----------------------------------------------------------------+\n"); 
 	printf("| NO  |     NAMA     |	BULAN KE- | ABSEN_HARIAN  |  ABSEN_BULAN  |\n"); 
 	printf("+-----------------------------------------------------------------+\n");
 	printf("|  1	   Ardhiya        %-8d       %d                %-7d  |\n", bulan, *rekap_harian1, total);
 	printf("|  2	   Prianka        %-8d       %d                %-7d  |\n", bulan2, *rekap_harian2, total2);
-	printf("|  3	   Anastacia      %-8d       %d                %-7d  |\n", bulan3, *rekap_harian3, total3);
+	printf("|  3	   Dextiro        %-8d       %d                %-7d  |\n", bulan3, *rekap_harian3, total3);
 	printf("|  4	   Yukita         %-8d       %d                %-7d  |\n", bulan4, *rekap_harian4, total4);
 	printf("|  5	   Cahaya         %-8d       %d                %-7d  |\n", bulan5, *rekap_harian5, total5);
+		
 	printf("+-----------------------------------------------------------------+\n");
 	
-	printf("\n REKAP ABSEN SUDAH DICETAK.\n\n");
 	FILE*absen;
 	absen = fopen ("Absen pegawai.txt", "w+");
 	
@@ -862,7 +1017,7 @@ int rekap_absen(){
 	fprintf(absen,"+-----------------------------------------------------------------+\n");
 	fprintf(absen,"|  1	   Ardhiya        %-8d       %d                %-7d  |\n", bulan, *rekap_harian1, total);
 	fprintf(absen,"|  2	   Prianka        %-8d       %d                %-7d  |\n", bulan2, *rekap_harian2, total2);
-	fprintf(absen,"|  3	   Anastacia      %-8d       %d                %-7d  |\n", bulan3, *rekap_harian3, total3);
+	fprintf(absen,"|  3	   Dextiro        %-8d       %d                %-7d  |\n", bulan3, *rekap_harian3, total3);
 	fprintf(absen,"|  4	   Yukita         %-8d       %d                %-7d  |\n", bulan4, *rekap_harian4, total4);
 	fprintf(absen,"|  5	   Cahaya         %-8d       %d                %-7d  |\n", bulan5, *rekap_harian5, total5);	
 	fprintf(absen,"+-----------------------------------------------------------------+\n");
@@ -881,6 +1036,12 @@ int rekap_absen(){
 						
 			case 'N' :
 			case 'n' :
+			system("cls");
+			goto rekap_absen;
+			
+			default :
+			printf("\nPilihan yang Anda masukkan tidak tersedia!");
+			printf("\nSilahkan coba kembali");
 			system("cls");
 			goto rekap_absen;
 		}		
@@ -921,39 +1082,4 @@ int minus_gaji(){
 			min_gaji5 = 0;
 		}
 	}
-}
-
-int rekapgaji(){
-	int gaji_pokok = 3000000;
-	
-	printf("Rekap gaji sudah dicetak, silakan di cek.");
-		FILE*rekapgaji;
-		rekapgaji = fopen ("Gaji Pegawai.txt", "w+");
-	
-		fprintf(rekapgaji,"\t\t\t\t\t==================================\n"); 
-		fprintf(rekapgaji,"\t\t\t\t\t|	   GAJI PEGAWAI		|\n"); 
-		fprintf(rekapgaji,"\t\t\t\t\t==================================\n\n");
-
-		fprintf(rekapgaji,"  +---------------------------------------------------------------------+\n");		
-		fprintf(rekapgaji,"  | No |   Nama    | Kode Pegawai | Rekap Absensi | Pengurangan Gaji	|\n");
-		fprintf(rekapgaji,"  +---------------------------------------------------------------------+\n");	
-		fprintf(rekapgaji,"  | 1  |  Ardhiya  |    181201    |     %-7d   |   	     %d  	|\n", total, min_gaji1);
-		fprintf(rekapgaji,"  | 2  |  Prianka  |    181202    |     %-7d   |   	     %d  	|\n", total2, min_gaji2);
-		fprintf(rekapgaji,"  | 3  | Anastacia |    190303    |     %-7d   |   	     %d  	|\n", total3, min_gaji3);
-		fprintf(rekapgaji,"  | 4  |  Yukita   |    190604    |     %-7d   |   	     %d  	|\n", total4, min_gaji4);
-		fprintf(rekapgaji,"  | 5  |  Cahaya   |    200105    |     %-7d   |   	     %d  	|\n", total5, min_gaji5);
-		fprintf(rekapgaji,"  +---------------------------------------------------------------------+\n\n");	
-		
-		fprintf(rekapgaji,"  +-------------------------------------------------------------------------------------+\n");		
-		fprintf(rekapgaji,"  | No |   Nama    | Kode Pegawai |	Gaji Pokok	|   Bonus |	Total Gaji	|\n");
-		fprintf(rekapgaji,"  +-------------------------------------------------------------------------------------+\n");	
-		fprintf(rekapgaji,"  | 1  |  Ardhiya  |    181201    |	%d		| %d	|	%d		|\n", gaji_pokok, *total_bonus1, gaji_pokok+*total_bonus1-min_gaji1);
-		fprintf(rekapgaji,"  | 2  |  Prianka  |    181202    |	%d		| %d	|	%d		|\n", gaji_pokok, *total_bonus2, gaji_pokok+*total_bonus2-min_gaji2);
-		fprintf(rekapgaji,"  | 3  | Anastacia |    190303    |	%d		| %d	|	%d		|\n", gaji_pokok, *total_bonus3, gaji_pokok+*total_bonus3-min_gaji3);
-		fprintf(rekapgaji,"  | 4  |  Yukita   |    190604    |	%d		| %d	|	%d		|\n", gaji_pokok, *total_bonus4, gaji_pokok+*total_bonus4-min_gaji4);
-		fprintf(rekapgaji,"  | 5  |  Cahaya   |    200105    |	%d		| %d	|	%d		|\n", gaji_pokok, *total_bonus5, gaji_pokok+*total_bonus5-min_gaji5);
-		fprintf(rekapgaji,"  +-------------------------------------------------------------------------------------+\n");	
-		fclose(rekapgaji);
-	system("cls");
-	menu_utama();
 }

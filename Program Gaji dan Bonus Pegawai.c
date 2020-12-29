@@ -5,25 +5,24 @@
 #include<time.h>
 #define BONUS 0.05
 
-	int bulan, tahun, alpha, total;
-	int bulan2, tahun2, alpha2, total2;
-	int bulan3, tahun3, alpha3, total3;
-	int bulan4, tahun4, alpha4, total4;
-	int bulan5, tahun5, alpha5, total5;
-	int i,j,k,jumlah_hari;
-
+int bulan, tahun, alpha, total;
+int bulan2, tahun2, alpha2, total2;
+int bulan3, tahun3, alpha3, total3;
+int bulan4, tahun4, alpha4, total4;
+int bulan5, tahun5, alpha5, total5;
+int i,j,k,jumlah_hari;
 
 int pilihan, pilihan2, pilihan4, pilihan5, pilihan7, pilihan9, pilihan_absen;
 char pilihan1, pilihan3, pilihan6, pilihan8, pilihan10, piihan11;
 int kode_pegawai;
 
-	char nama_pelanggan1[100], nama_pelanggan2[100], nama_pelanggan3[100], nama_pelanggan4[100], nama_pelanggan5[100];
-	char nama_barang1[100], nama_barang2[100], nama_barang3[100], nama_barang4[100], nama_barang5[100];
-	int harga_barang1, harga_barang2, harga_barang3, harga_barang4, harga_barang5;
+char nama_pelanggan1[100], nama_pelanggan2[100], nama_pelanggan3[100], nama_pelanggan4[100], nama_pelanggan5[100];
+char nama_barang1[100], nama_barang2[100], nama_barang3[100], nama_barang4[100], nama_barang5[100];
+int harga_barang1, harga_barang2, harga_barang3, harga_barang4, harga_barang5;
 	
-	int data_bonus1=0, data_bonus2=0, data_bonus3=0, data_bonus4=0, data_bonus5=0;
-	int bonus_pegawai1, bonus_pegawai2, bonus_pegawai3, bonus_pegawai4, bonus_pegawai5;
-	int *total_bonus1, *total_bonus2, *total_bonus3, *total_bonus4, *total_bonus5;
+int data_bonus1=0, data_bonus2=0, data_bonus3=0, data_bonus4=0, data_bonus5=0;
+int bonus_pegawai1, bonus_pegawai2, bonus_pegawai3, bonus_pegawai4, bonus_pegawai5;
+int *total_bonus1, *total_bonus2, *total_bonus3, *total_bonus4, *total_bonus5;
 
 int data_abs_harian1=0, data_abs_harian2=0, data_abs_harian3=0, data_abs_harian4=0, data_abs_harian5=0;
 int pegawai_satu, pegawai_dua, pegawai_tiga, pegawai_empat, pegawai_lima;
@@ -43,9 +42,7 @@ int rekapan();
 int rekap_absen();
 int minus_gaji();
 
-int main()
-{
-	
+int main(){	
 	system("color 70");
 	char user_name[10];
 	char password[10];
@@ -59,20 +56,16 @@ int main()
 	printf("  LOGIN PROGRAM\n\n");
 	printf("  Masukkan username anda : "); scanf("%s", &user_name);
 	printf("  Masukkan password      : "); scanf("%s", &password);
-		
-		
 			if (strcmp(user_name, "admin")==0 && strcmp(password, "deluxepass")==0 ){
 				printf("\nLogin Sukses");
 				system ("cls");
 				input_pegawai();
 			}
-			
 			else if(strcmp(user_name, "pegawai")==0 && strcmp(password, "deluxepass")==0 ){
 				printf("\nLogin Sukses");
 				system ("cls");
 				input_pegawai();
 			}
-			
 			else{
 				printf("\nUsername atau Password yang anda masukkan salah!");
 				printf("\nSilahkan mencoba kembali");
@@ -81,8 +74,7 @@ int main()
 			}
 }
 
-int input_pegawai()
-{
+int input_pegawai(){
 	
 	menu_utama:
 	printf("\t\t\t\t\t==================================\n"); 
@@ -98,23 +90,20 @@ int input_pegawai()
 	printf("  |	4	|	  Yukita	|   	190604	   |\n");
 	printf("  |	5	|	  Cahaya	|   	200105	   |\n");
 	printf("  +--------------------------------------------------------+\n\n");
-
+	
 	printf(" LOGIN PEGAWAI\n");
 	printf(" Silahkan masukkan kode pegawai anda untuk melakukan login!\n\n"); 
 	printf("\tKode pegawai : "); scanf("%d", &kode_pegawai);
 	
-	if(kode_pegawai==181201 || kode_pegawai==181202 || kode_pegawai==190303 || kode_pegawai==190604 || kode_pegawai==200105)
-	{
+	if(kode_pegawai==181201 || kode_pegawai==181202 || kode_pegawai==190303 || kode_pegawai==190604 || kode_pegawai==200105){
 		system("cls");
 		menu_utama();
 	}
-	else
-	{
+	else{
 		printf("\nPeriksa kembali inputan anda!");
 		system("cls");
 		goto menu_utama;
 	}
-		
 	return kode_pegawai;
 }
 
@@ -124,8 +113,8 @@ int menu_utama(){
 	printf("\t\t\t\t\t==================================\n"); 
 	printf("\t\t\t\t\t|	   TOKO DELUXE		 |\n"); 
 	printf("\t\t\t\t\t==================================\n\n");
-
 	printf(" NOTE!!! HARAP MEMASUKAN PILIHAN SESUAI DENGAN MENU YANG TERSEDIA\n\n");
+	
 	printf("=================================\n"); 
 	printf("| 	  PILIHAN MENU	 	|\n"); 
 	printf("=================================\n"); 
@@ -137,17 +126,15 @@ int menu_utama(){
 	printf("5. LOG OUT			|\n"); 
 	printf("6. KELUAR			|\n");
 	printf("=================================\n\n"); 
-	
+		
 	printf("=================================\n");
 	printf("| 	 MASUKKAN MENU 		| \n"); 
 	printf("=================================\n");
-	
 	printf("Pilihan Menu: ");
 	scanf("%d", &pilihan);
 	system ("cls");
 	
-	switch (pilihan)
-	{
+	switch (pilihan){
 		case 1 : 
 			gaji_bonus();
 			break;
@@ -174,18 +161,14 @@ int menu_utama(){
 		default :
 			printf("\nPeriksa kembali inputan anda!");
 			system("cls");
-			goto utama;
-			
+			goto utama;	
 	}
 	return pilihan;
 }
 
-
-int gaji_bonus()
-{
-	
-	if(pilihan==1)
-	{
+int gaji_bonus(){
+	if(pilihan==1){
+		
 		satu:
 		printf("\t\t\t\t\t==================================\n"); 
 		printf("\t\t\t\t\t|   DAFTAR NAMA DAN HARGA BARANG |\n"); 
@@ -206,8 +189,7 @@ int gaji_bonus()
 		printf("Ingin melanjutkan ke menu berikutnya? (y/n) --> ");
 		scanf("%s", &pilihan1);
 		
-		switch (pilihan1)
-		{
+		switch (pilihan1){
 			case 'Y':
 			case 'y':
 			system ("cls");
@@ -224,9 +206,7 @@ int gaji_bonus()
 			goto satu;
 		}
 	}
-	
-	else if(pilihan==2)
-	{	
+	else if(pilihan==2){	
 		
 		input_rekap:
 		total_bonus1 = &data_bonus1;
@@ -244,15 +224,15 @@ int gaji_bonus()
 		printf(" Ingin kembali melihat daftar nama dan harga barang? (y/n) --> "); scanf("%s", &pilihan10);
 		fflush(stdin);
 		
-		switch(pilihan10)
-		{
+		switch(pilihan10){
 			case 'Y':
 			case 'y':
-				system("cls");
-				goto satu;
+			system("cls");
+			goto satu;
+			
 			case 'N':
 			case 'n':
-				break;
+			break;
 		}
 		
 		if(kode_pegawai==181201){
@@ -271,8 +251,7 @@ int gaji_bonus()
 				bonus_pegawai1 = BONUS*harga_barang1;
 				*total_bonus1 = *total_bonus1 + bonus_pegawai1;
 			}
-			goto menu1;		
-			
+			goto menu1;			
 		}
 		else if(kode_pegawai==181202){
 			
@@ -290,8 +269,7 @@ int gaji_bonus()
 				bonus_pegawai2 = BONUS*harga_barang2;
 				*total_bonus2 = *total_bonus2 + bonus_pegawai2;
 			}	
-			goto menu1;
-			
+			goto menu1;	
 		}
 		else if(kode_pegawai==190303){
 						
@@ -309,8 +287,7 @@ int gaji_bonus()
 				bonus_pegawai3 = BONUS*harga_barang3;
 				*total_bonus3 = *total_bonus3 + bonus_pegawai3;
 			}	
-			goto menu1;
-			
+			goto menu1;	
 		}
 		else if(kode_pegawai==190604){
 						
@@ -328,8 +305,7 @@ int gaji_bonus()
 				bonus_pegawai4 = BONUS*harga_barang4;
 				*total_bonus4 = *total_bonus4 + bonus_pegawai4;
 			}	
-			goto menu1;
-			
+			goto menu1;	
 		}
 		else if(kode_pegawai==200105){
 						
@@ -347,13 +323,11 @@ int gaji_bonus()
 				bonus_pegawai5 = BONUS*harga_barang5;
 				*total_bonus5 = *total_bonus5 + bonus_pegawai5;
 			}	
-			goto menu1;
-			
+			goto menu1;	
 		}
 		else{
 			printf("\nPeriksa kembali inputan anda!");
 		}
-	
 		
 		menu1:
 		printf("\n");
@@ -387,9 +361,7 @@ int gaji_bonus()
 			goto menu1;
 		}
 	}
-	
-	else if(pilihan==3)
-	{
+	else if(pilihan==3){
 		
 		absen_pegawai:
 		printf("\t\t\t\t\t==================================\n"); 
@@ -640,32 +612,30 @@ int gaji_bonus()
 		printf("PASTIKAN ANDA MENGAKSES MENU INI PADA AKHIR BULAN!\n\n");
 		
 		printf("Berikut Daftar Nama Pegawai dan Detail Gaji Per-Orang : \n");
-		printf("  +-------------------------------------------------------------------+\n");		
-		printf("  | No |   Nama    | Kode Pegawai | Rekap Absensi | Pengurangan Gaji |\n");
-		printf("  +-------------------------------------------------------------------+\n");
-		printf("  | 1  |  Ardhiya  |    181201    |     %-7d   |	%d	|\n", total, min_gaji1); 
-		printf("  | 2  |  Prianka  |    181202    |     %-7d   |	%d	|\n", total2, min_gaji2); 
-		printf("  | 3  |  Dextiro  |    190303    |     %-7d   |	%d	|\n", total3, min_gaji3); 
-		printf("  | 4  |  Yukita   |    190604    |     %-7d   |	%d	|\n", total4, min_gaji4); 
-		printf("  | 5  |  Cahaya   |    200105    |     %-7d   |	%d	|\n", total5, min_gaji5); 
+		printf("  +---------------------------------------------------------------------+\n");		
+		printf("  | No |   Nama    | Kode Pegawai | Rekap Absensi | Pengurangan Gaji 	|\n");
+		printf("  +---------------------------------------------------------------------+\n");
+		printf("  | 1  |  Ardhiya  |    181201    |     %-7d   |	%d		|\n", total, min_gaji1); 
+		printf("  | 2  |  Prianka  |    181202    |     %-7d   |	%d		|\n", total2, min_gaji2); 
+		printf("  | 3  |  Dextiro  |    190303    |     %-7d   |	%d		|\n", total3, min_gaji3); 
+		printf("  | 4  |  Yukita   |    190604    |     %-7d   |	%d		|\n", total4, min_gaji4); 
+		printf("  | 5  |  Cahaya   |    200105    |     %-7d   |	%d		|\n", total5, min_gaji5); 
 		printf("  +---------------------------------------------------------------------+\n\n");	
 		
-		printf("  +-------------------------------------------------------------------------------------+\n");		
-		printf("  | No |   Nama    | Kode Pegawai |	Gaji Pokok	|   Bonus |	Total Gaji	|\n");
-		printf("  +-------------------------------------------------------------------------------------+\n");	
+		printf("  +---------------------------------------------------------------------------------------------+\n");		
+		printf("  | No |   Nama    | Kode Pegawai |	Gaji Pokok	|   Bonus 	|	Total Gaji	|\n");
+		printf("  +---------------------------------------------------------------------------------------------+\n");	
 		printf("  | 1  |  Ardhiya  |    181201    |	%d		|	%d	|	%d		|\n", gaji_pokok, *total_bonus1, gaji_pokok+*total_bonus1-min_gaji1);
 		printf("  | 2  |  Prianka  |    181202    |	%d		|	%d	|	%d		|\n", gaji_pokok, *total_bonus2, gaji_pokok+*total_bonus2-min_gaji2);
 		printf("  | 3  |  Dextiro  |    190303    |	%d		|	%d	|	%d		|\n", gaji_pokok, *total_bonus3, gaji_pokok+*total_bonus3-min_gaji3);
 		printf("  | 4  |  Yukita   |    190604    |	%d		|	%d	|	%d		|\n", gaji_pokok, *total_bonus4, gaji_pokok+*total_bonus4-min_gaji4);
 		printf("  | 5  |  Cahaya   |    200105    |	%d		|	%d	|	%d		|\n", gaji_pokok, *total_bonus5, gaji_pokok+*total_bonus5-min_gaji5);
-		printf("  +-------------------------------------------------------------------------------------+\n");	
+		printf("  +---------------------------------------------------------------------------------------------+\n");	
 		
 		printf("\nIngin mencetak rekapan? (y/n) --> ");
 		scanf("%s", &pilihan5);
 		
-			if(pilihan5 == 'Y' || pilihan5 == 'y')
-			{
-				
+			if(pilihan5 == 'Y' || pilihan5 == 'y'){
 				printf("Rekap gaji sudah dicetak ke dalam file Gaji Pegawai.txt, mohon untuk di cek kembali.");
 					FILE*rekapgaji;
 					rekapgaji = fopen ("Gaji Pegawai.txt", "w+");
@@ -697,9 +667,7 @@ int gaji_bonus()
 					
 					goto menu9;
 			}
-			
 			else if(pilihan5 == 'N' || pilihan5 == 'n'){
-				
 				system("cls");
 				menu_utama();
 			}
@@ -707,8 +675,7 @@ int gaji_bonus()
 				printf("\nPilihan yang Anda masukkan tidak tersedia!");
 				printf("\nSilahkan coba kembali");
 				system("cls");
-				goto gaji_pegawai;
-				
+				goto gaji_pegawai;	
 			}
 		
 		menu9:
@@ -717,8 +684,7 @@ int gaji_bonus()
 		printf("2. Kembali ke menu utama\n");
 		printf("Piihan Anda: "); scanf("%d", &pilihan9);
 		
-		switch (pilihan9)
-		{
+		switch (pilihan9){
 			case 1 :
 			system ("cls");
 			exit(0);
@@ -726,15 +692,13 @@ int gaji_bonus()
 			case 2 :
 			system("cls");
 			menu_utama();
-			
-				
+					
 			default :
 			printf("\nPilihan yang Anda masukkan tidak tersedia!");
 			printf("\nSilahkan coba kembali");
 			system("cls");
 			goto menu9;
-		}
-			
+		}		
 		/*Total gaji dari seluruh pegawai:
 		Nama pegawai		: (otomatis)
 		Rekap absensi		: (otomatis)
@@ -743,8 +707,7 @@ int gaji_bonus()
 	}
 }
 
-int rekapan(){
-	
+int rekapan(){	
 	printf("\t\t\t\t\t==================================\n"); 
 	printf("\t\t\t\t\t|	   REKAP BONUS		 |\n"); 
 	printf("\t\t\t\t\t==================================\n\n");
@@ -765,207 +728,156 @@ int rekapan(){
 		fflush(stdin);
 		system("cls");
 		menu_utama();
-
 }
 
-int absen_bulanan(){
-		
-							
-		printf("MASUKKAN BULAN          : ");
-		scanf("%d", &bulan);
-		
-		
-			if(bulan==1||bulan==3||bulan==5||bulan==7||bulan==8||bulan==10||bulan==12)
-			{
-				jumlah_hari=27;
-				printf("MASUKKAN TAHUN          : "); scanf("%d", &tahun);
-				printf("MASUKKAN KETIDAKHADIRAN	: "); scanf("%d", &alpha); 
-				total=jumlah_hari-alpha;
-			}
-			
-			else if(bulan==4 ||bulan==6 ||bulan==9 ||bulan==11)
-			{
-				jumlah_hari=26;
-				printf("MASUKKAN TAHUN          : "); scanf("%d", &tahun);
-				printf("MASUKKAN KETIDAKHADIRAN	: "); scanf("%d", &alpha); 
-				total=jumlah_hari-alpha;
-			}
-			
-			else if(bulan==2)
-			{
-				printf("MASUKKAN TAHUN          : "); scanf("%d", &tahun);
-				if(tahun%4==0){
-					jumlah_hari=25;
-					printf("MASUKKAN KETIDAKHADIRAN	: "); scanf("%d", &alpha); 
-					total=jumlah_hari-alpha;	
-				}
-				else if(tahun%4!=0){
-					jumlah_hari=24;
-					printf("MASUKKAN KETIDAKHADIRAN	: "); scanf("%d", &alpha); 
-					total=jumlah_hari-alpha;
-				}
-			}
-		
+int absen_bulanan(){					
+	printf("MASUKKAN BULAN          : ");
+	scanf("%d", &bulan);
+	if(bulan==1||bulan==3||bulan==5||bulan==7||bulan==8||bulan==10||bulan==12){
+		jumlah_hari=27;
+		printf("MASUKKAN TAHUN          : "); scanf("%d", &tahun);
+		printf("MASUKKAN KETIDAKHADIRAN	: "); scanf("%d", &alpha); 
+		total=jumlah_hari-alpha;
+	}
+	else if(bulan==4 ||bulan==6 ||bulan==9 ||bulan==11){
+		jumlah_hari=26;
+		printf("MASUKKAN TAHUN          : "); scanf("%d", &tahun);
+		printf("MASUKKAN KETIDAKHADIRAN	: "); scanf("%d", &alpha); 
+		total=jumlah_hari-alpha;
+	}
+	else if(bulan==2){
+		printf("MASUKKAN TAHUN          : "); scanf("%d", &tahun);
+		if(tahun%4==0){
+			jumlah_hari=25;
+			printf("MASUKKAN KETIDAKHADIRAN	: "); scanf("%d", &alpha); 
+			total=jumlah_hari-alpha;	
+		}
+		else if(tahun%4!=0){
+			jumlah_hari=24;
+			printf("MASUKKAN KETIDAKHADIRAN	: "); scanf("%d", &alpha); 
+			total=jumlah_hari-alpha;
+		}
+	}	
 }
 
 int absen_bulanan2(){
-		
-							
-		printf("MASUKKAN BULAN          : ");
-		scanf("%d", &bulan2);
-		
-		
-			if(bulan2==1||bulan2==3||bulan2==5||bulan2==7||bulan2==8||bulan2==10||bulan2==12)
-			{
-				jumlah_hari=27;
-				printf("MASUKKAN TAHUN          : "); scanf("%d", &tahun2);
-				printf("MASUKKAN KETIDAKHADIRAN	: "); scanf("%d", &alpha2); 
-				total2=jumlah_hari-alpha2;
-			}
-			
-			else if(bulan2==4 ||bulan2==6 ||bulan2==9 ||bulan2==11)
-			{
-				jumlah_hari=26;
-				printf("MASUKKAN TAHUN          : "); scanf("%d", &tahun2);
-				printf("MASUKKAN KETIDAKHADIRAN	: "); scanf("%d", &alpha2); 
-				total2=jumlah_hari-alpha2;
-			}
-			
-			else if(bulan2==2)
-			{
-				printf("MASUKKAN TAHUN          : "); scanf("%d", &tahun2);
-				if(tahun2%4==0){
-					jumlah_hari=25;
-					printf("MASUKKAN KETIDAKHADIRAN	: "); scanf("%d", &alpha2); 
-					total2=jumlah_hari-alpha2;	
-				}
-				else if(tahun2%4!=0){
-					jumlah_hari=24;
-					printf("MASUKKAN KETIDAKHADIRAN	: "); scanf("%d", &alpha2); 
-					total2=jumlah_hari-alpha2;
-				}
-			}
-		
+	printf("MASUKKAN BULAN          : ");
+	scanf("%d", &bulan2);
+	if(bulan2==1||bulan2==3||bulan2==5||bulan2==7||bulan2==8||bulan2==10||bulan2==12){
+		jumlah_hari=27;
+		printf("MASUKKAN TAHUN          : "); scanf("%d", &tahun2);
+		printf("MASUKKAN KETIDAKHADIRAN	: "); scanf("%d", &alpha2); 
+		total2=jumlah_hari-alpha2;
+	}
+	else if(bulan2==4 ||bulan2==6 ||bulan2==9 ||bulan2==11){
+		jumlah_hari=26;
+		printf("MASUKKAN TAHUN          : "); scanf("%d", &tahun2);
+		printf("MASUKKAN KETIDAKHADIRAN	: "); scanf("%d", &alpha2); 
+		total2=jumlah_hari-alpha2;
+	}
+	else if(bulan2==2){
+		printf("MASUKKAN TAHUN          : "); scanf("%d", &tahun2);
+		if(tahun2%4==0){
+			jumlah_hari=25;
+			printf("MASUKKAN KETIDAKHADIRAN	: "); scanf("%d", &alpha2); 
+			total2=jumlah_hari-alpha2;	
+		}
+		else if(tahun2%4!=0){
+			jumlah_hari=24;
+			printf("MASUKKAN KETIDAKHADIRAN	: "); scanf("%d", &alpha2); 
+			total2=jumlah_hari-alpha2;
+		}
+	}		
 }
 
-int absen_bulanan3(){
-		
-							
-		printf("MASUKKAN BULAN          : ");
-		scanf("%d", &bulan3);
-		
-		
-			if(bulan3==1||bulan3==3||bulan3==5||bulan3==7||bulan3==8||bulan3==10||bulan3==12)
-			{
-				jumlah_hari=27;
-				printf("MASUKKAN TAHUN          : "); scanf("%d", &tahun3);
-				printf("MASUKKAN KETIDAKHADIRAN	: "); scanf("%d", &alpha3); 
-				total3=jumlah_hari-alpha3;
-			}
-			
-			else if(bulan3==4 ||bulan3==6 ||bulan3==9 ||bulan3==11)
-			{
-				jumlah_hari=26;
-				printf("MASUKKAN TAHUN          : "); scanf("%d", &tahun3);
-				printf("MASUKKAN KETIDAKHADIRAN	: "); scanf("%d", &alpha3); 
-				total3=jumlah_hari-alpha3;
-			}
-			
-			else if(bulan3==2)
-			{
-				printf("MASUKKAN TAHUN          : "); scanf("%d", &tahun3);
-				if(tahun3%4==0){
-					jumlah_hari=25;
-					printf("MASUKKAN KETIDAKHADIRAN	: "); scanf("%d", &alpha3); 
-					total3=jumlah_hari-alpha3;	
-				}
-				else if(tahun3%4!=0){
-					jumlah_hari=24;
-					printf("MASUKKAN KETIDAKHADIRAN	: "); scanf("%d", &alpha3); 
-					total3=jumlah_hari-alpha3;
-				}
-			}
-		
+int absen_bulanan3(){					
+	printf("MASUKKAN BULAN          : ");
+	scanf("%d", &bulan3);
+	if(bulan3==1||bulan3==3||bulan3==5||bulan3==7||bulan3==8||bulan3==10||bulan3==12){
+		jumlah_hari=27;
+		printf("MASUKKAN TAHUN          : "); scanf("%d", &tahun3);
+		printf("MASUKKAN KETIDAKHADIRAN	: "); scanf("%d", &alpha3); 
+		total3=jumlah_hari-alpha3;
+	}
+	else if(bulan3==4 ||bulan3==6 ||bulan3==9 ||bulan3==11){
+		jumlah_hari=26;
+		printf("MASUKKAN TAHUN          : "); scanf("%d", &tahun3);
+		printf("MASUKKAN KETIDAKHADIRAN	: "); scanf("%d", &alpha3); 
+		total3=jumlah_hari-alpha3;
+	}
+	else if(bulan3==2){
+		printf("MASUKKAN TAHUN          : "); scanf("%d", &tahun3);
+		if(tahun3%4==0){
+			jumlah_hari=25;
+			printf("MASUKKAN KETIDAKHADIRAN	: "); scanf("%d", &alpha3); 
+			total3=jumlah_hari-alpha3;	
+		}
+		else if(tahun3%4!=0){
+			jumlah_hari=24;
+			printf("MASUKKAN KETIDAKHADIRAN	: "); scanf("%d", &alpha3); 
+			total3=jumlah_hari-alpha3;
+		}
+	}		
 }
 
 int absen_bulanan4(){
-		
-							
-		printf("MASUKKAN BULAN          : ");
-		scanf("%d", &bulan4);
-		
-		
-			if(bulan4==1||bulan4==3||bulan4==5||bulan4==7||bulan4==8||bulan4==10||bulan4==12)
-			{
-				jumlah_hari=27;
-				printf("MASUKKAN TAHUN          : "); scanf("%d", &tahun4);
-				printf("MASUKKAN KETIDAKHADIRAN	: "); scanf("%d", &alpha4); 
-				total4=jumlah_hari-alpha4;
-			}
-			
-			else if(bulan4==4 ||bulan4==6 ||bulan4==9 ||bulan4==11)
-			{
-				jumlah_hari=26;
-				printf("MASUKKAN TAHUN          : "); scanf("%d", &tahun4);
-				printf("MASUKKAN KETIDAKHADIRAN	: "); scanf("%d", &alpha4); 
-				total4=jumlah_hari-alpha4;
-			}
-			
-			else if(bulan4==2)
-			{
-				printf("MASUKKAN TAHUN          : "); scanf("%d", &tahun4);
-				if(tahun4%4==0){
-					jumlah_hari=25;
-					printf("MASUKKAN KETIDAKHADIRAN	: "); scanf("%d", &alpha4); 
-					total4=jumlah_hari-alpha4;	
-				}
-				else if(tahun4%4!=0){
-					jumlah_hari=24;
-					printf("MASUKKAN KETIDAKHADIRAN	: "); scanf("%d", &alpha4); 
-					total4=jumlah_hari-alpha4;
-				}
-			}
-		
+	printf("MASUKKAN BULAN          : ");
+	scanf("%d", &bulan4);
+	if(bulan4==1||bulan4==3||bulan4==5||bulan4==7||bulan4==8||bulan4==10||bulan4==12){
+		jumlah_hari=27;
+		printf("MASUKKAN TAHUN          : "); scanf("%d", &tahun4);
+		printf("MASUKKAN KETIDAKHADIRAN	: "); scanf("%d", &alpha4); 
+		total4=jumlah_hari-alpha4;
+	}
+	else if(bulan4==4 ||bulan4==6 ||bulan4==9 ||bulan4==11){
+		jumlah_hari=26;
+		printf("MASUKKAN TAHUN          : "); scanf("%d", &tahun4);
+		printf("MASUKKAN KETIDAKHADIRAN	: "); scanf("%d", &alpha4); 
+		total4=jumlah_hari-alpha4;
+	}
+	else if(bulan4==2){
+		printf("MASUKKAN TAHUN          : "); scanf("%d", &tahun4);
+		if(tahun4%4==0){
+			jumlah_hari=25;
+			printf("MASUKKAN KETIDAKHADIRAN	: "); scanf("%d", &alpha4); 
+			total4=jumlah_hari-alpha4;	
+		}
+		else if(tahun4%4!=0){
+			jumlah_hari=24;
+			printf("MASUKKAN KETIDAKHADIRAN	: "); scanf("%d", &alpha4); 
+			total4=jumlah_hari-alpha4;
+		}
+	}	
 }
 
 int absen_bulanan5(){
-		
-							
-		printf("MASUKKAN BULAN          : ");
-		scanf("%d", &bulan5);
-		
-		
-			if(bulan5==1||bulan5==3||bulan5==5||bulan5==7||bulan5==8||bulan5==10||bulan5==12)
-			{
-				jumlah_hari=27;
-				printf("MASUKKAN TAHUN          : "); scanf("%d", &tahun5);
-				printf("MASUKKAN KETIDAKHADIRAN	: "); scanf("%d", &alpha5); 
-				total5=jumlah_hari-alpha5;
-			}
-			
-			else if(bulan5==4 ||bulan5==6 ||bulan5==9 ||bulan5==11)
-			{
-				jumlah_hari=26;
-				printf("MASUKKAN TAHUN          : "); scanf("%d", &tahun5);
-				printf("MASUKKAN KETIDAKHADIRAN	: "); scanf("%d", &alpha5); 
-				total5=jumlah_hari-alpha5;
-			}
-			
-			else if(bulan5==2)
-			{
-				printf("MASUKKAN TAHUN          : "); scanf("%d", &tahun5);
-				if(tahun5%4==0){
-					jumlah_hari=25;
-					printf("MASUKKAN KETIDAKHADIRAN	: "); scanf("%d", &alpha5); 
-					total5=jumlah_hari-alpha5;	
-				}
-				else if(tahun5%4!=0){
-					jumlah_hari=24;
-					printf("MASUKKAN KETIDAKHADIRAN	: "); scanf("%d", &alpha5); 
-					total5=jumlah_hari-alpha5;
-				}
-			}
-		
+	printf("MASUKKAN BULAN          : ");
+	scanf("%d", &bulan5);
+	if(bulan5==1||bulan5==3||bulan5==5||bulan5==7||bulan5==8||bulan5==10||bulan5==12){
+		jumlah_hari=27;
+		printf("MASUKKAN TAHUN          : "); scanf("%d", &tahun5);
+		printf("MASUKKAN KETIDAKHADIRAN	: "); scanf("%d", &alpha5); 
+		total5=jumlah_hari-alpha5;
+	}
+	else if(bulan5==4 ||bulan5==6 ||bulan5==9 ||bulan5==11){
+		jumlah_hari=26;
+		printf("MASUKKAN TAHUN          : "); scanf("%d", &tahun5);
+		printf("MASUKKAN KETIDAKHADIRAN	: "); scanf("%d", &alpha5); 
+		total5=jumlah_hari-alpha5;
+	}
+	else if(bulan5==2){
+		printf("MASUKKAN TAHUN          : "); scanf("%d", &tahun5);
+		if(tahun5%4==0){
+			jumlah_hari=25;
+			printf("MASUKKAN KETIDAKHADIRAN	: "); scanf("%d", &alpha5); 
+			total5=jumlah_hari-alpha5;	
+		}
+		else if(tahun5%4!=0){
+			jumlah_hari=24;
+			printf("MASUKKAN KETIDAKHADIRAN	: "); scanf("%d", &alpha5); 
+			total5=jumlah_hari-alpha5;
+		}
+	}	
 }
 
 int rekap_absen(){
@@ -1008,8 +920,7 @@ int rekap_absen(){
 		printf("Silahkan tekan 'Enter' untuk kembali"); getchar();
 		fflush(stdin);
 		system("cls");
-		menu_utama();	
-		
+		menu_utama();			
 }
 
 int minus_gaji(){

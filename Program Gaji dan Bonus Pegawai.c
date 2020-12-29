@@ -28,6 +28,7 @@ int data_abs_harian1=0, data_abs_harian2=0, data_abs_harian3=0, data_abs_harian4
 int pegawai_satu, pegawai_dua, pegawai_tiga, pegawai_empat, pegawai_lima;
 int *rekap_harian1, *rekap_harian2, *rekap_harian3, *rekap_harian4, *rekap_harian5;
 int min_gaji1=0, min_gaji2=0, min_gaji3=0, min_gaji4=0, min_gaji5=0;
+int pilihann, pilihann1, pilihann2, pilihann3;
 
 int menu_utama();
 int input_pegawai();
@@ -41,6 +42,8 @@ int absen_bulanan5();
 int rekapan();
 int rekap_absen();
 int minus_gaji();
+int admin();
+int admin2();
 
 int main(){	
 	system("color 70");
@@ -59,7 +62,7 @@ int main(){
 			if (strcmp(user_name, "admin")==0 && strcmp(password, "deluxepass")==0 ){
 				printf("\nLogin Sukses");
 				system ("cls");
-				input_pegawai();
+				admin();
 			}
 			else if(strcmp(user_name, "pegawai")==0 && strcmp(password, "deluxepass")==0 ){
 				printf("\nLogin Sukses");
@@ -956,5 +959,134 @@ int minus_gaji(){
 		else if(alpha5=0){
 			min_gaji5 = 0;
 		}
+	}
+}
+//----------------------------------------------------------------------------------------------------------------------------------------------------------
+int admin(){	
+	menu_admin:
+		printf("\t\t\t\t\t==================================\n"); 
+		printf("\t\t\t\t\t|	   TOKO DELUXE		 |\n"); 
+		printf("\t\t\t\t\t==================================\n\n");
+
+		printf(" NOTE!!! HARAP MEMASUKAN PILIHAN SESUAI DENGAN MENU YANG TERSEDIA\n\n");
+		printf("=================================\n"); 
+		printf("| 	  PILIHAN MENU	 	|\n"); 
+		printf("=================================\n"); 
+		printf("=================================\n");
+		printf("1. DAFTAR NAMA DAN HARGA BARANG |\n"); 
+		printf("2. DAFTAR NAMA PEGAWAI		|\n"); 
+		printf("3. ABSEN DAN TOTAL GAJI PEGAWAI	|\n"); 
+		printf("4. KELUAR			|\n");
+		printf("=================================\n\n"); 
+		
+		printf("=================================\n");
+		printf("| 	 MASUKKAN MENU 		| \n"); 
+		printf("=================================\n");
+		
+		printf("Pilihan Menu: ");
+	scanf("%d", &pilihann);
+	system ("cls");
+	
+	switch (pilihann)
+	{
+		case 1 : 
+			admin2();
+			break;
+		
+		case 2 : 
+			admin2();
+			break;
+			
+		case 3 : 
+			admin2();
+			break;
+		
+		case 4 : 
+			exit(0);
+
+		default :
+			printf("\nPeriksa kembali inputan anda!");
+			system("cls");
+			goto menu_admin;	
+	}
+	return pilihann;	
+}
+
+int admin2(){
+	if(pilihann==1){
+		daftar:
+		printf("\t\t\t\t\t==================================\n"); 
+		printf("\t\t\t\t\t|   DAFTAR NAMA DAN HARGA BARANG |\n"); 
+		printf("\t\t\t\t\t==================================\n\n");
+		
+		printf("Nama Produk Tersedia: \n\n");
+		printf("  #1 ParfumA	Rp.30.000\n");
+		printf("  #2 ParfumB  	Rp.40.000\n");
+		printf("  #3 ParfumC  	Rp.48.000\n");
+		printf("  #4 ParfumD 	Rp.60.000\n");
+		printf("  #5 ParfumE 	Rp.35.000\n\n");
+		
+		printf("Ingin melanjutkan ke menu berikutnya? (y/n) --> ");
+		scanf("%s", &pilihann1);
+		
+		switch (pilihann1)
+		{
+			case 'Y':
+			case 'y':
+			system ("cls");
+			goto nama;
+			
+			case 'N':
+			case 'n':
+			system ("cls");
+			admin();
+			
+			default :
+			printf("\nPeriksa kembali inputan anda!");
+			system("cls");
+			goto daftar;
+		}
+	}
+	else if(pilihann==2){
+		nama:
+		printf("\t\t\t\t\t==================================\n"); 
+		printf("\t\t\t\t\t|   	DAFTAR NAMA PEGAWAI	 |\n"); 
+		printf("\t\t\t\t\t==================================\n\n");
+		
+		printf("  +--------------------------------------------------------+\n");		
+		printf("  |	No	|	  Nama		|   Kode Pegawai   |\n");
+		printf("  +--------------------------------------------------------+\n");	
+		printf("  |	1	|	  Ardhiya	|   	181201	   |\n");
+		printf("  |	2	|	  Prianka	|   	181202	   |\n");
+		printf("  |	3	|	  Dextiro	|   	190303	   |\n");
+		printf("  |	4	|	  Yukita	|   	190604	   |\n");
+		printf("  |	5	|	  Cahaya	|   	200105	   |\n");
+		printf("  +--------------------------------------------------------+\n\n");
+		fflush(stdin);
+		
+		printf("\n");
+		printf("Silahkan tekan 'Enter' untuk kembali"); getchar();
+		fflush(stdin);
+		system("cls");
+		admin();	
+	}
+	else if(pilihann==3){
+		
+		char adminn[1000];
+		FILE*rekapgaji;
+		if((rekapgaji = fopen("Gaji Pegawai.txt","r")) == NULL){
+      		printf("File tidak ada!");
+      		exit(1);
+    	}
+    	while(fgets(adminn, sizeof(adminn), rekapgaji)){
+        	printf("%s", adminn);
+		}
+    	fclose(rekapgaji);
+    	fflush(stdin);
+    	printf("\n");
+		printf("Silahkan tekan 'Enter' untuk kembali"); getchar();
+		fflush(stdin);			
+		system("cls");
+		admin();
 	}
 }

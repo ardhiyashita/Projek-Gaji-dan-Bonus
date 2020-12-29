@@ -1020,11 +1020,16 @@ int admin2(){
 		printf("\t\t\t\t\t==================================\n\n");
 		
 		printf("Nama Produk Tersedia: \n\n");
-		printf("  #1 ParfumA	Rp.30.000\n");
-		printf("  #2 ParfumB  	Rp.40.000\n");
-		printf("  #3 ParfumC  	Rp.48.000\n");
-		printf("  #4 ParfumD 	Rp.60.000\n");
-		printf("  #5 ParfumE 	Rp.35.000\n\n");
+		printf("  #1 Victoria's Secret	        Rp.275.000\n");
+		printf("  #2 Beyonce Heat  	        Rp.400.000\n");
+		printf("  #3 Katy Perry  	        Rp.600.000\n");
+		printf("  #4 Bvlgari 	                Rp.680.000\n");
+		printf("  #5 Dolce & Gabbana 	        Rp.500.000\n");
+		printf("  #6 CK One 	                Rp.500.000\n");
+		printf("  #7 Platinum Egoiste           Rp.350.000\n");
+		printf("  #8 Legend 	                Rp.850.000\n");
+		printf("  #9 Pour Homme                 Rp.1.000.000\n");
+		printf("  #10 Samourai Eau de Toilette 	Rp.470.000\n\n");
 		
 		printf("Ingin melanjutkan ke menu berikutnya? (y/n) --> ");
 		scanf("%s", &pilihann1);

@@ -12,7 +12,7 @@ int bulan4, tahun4, alpha4, total4;
 int bulan5, tahun5, alpha5, total5;
 int i,j,k,jumlah_hari;
 
-int pilihan, pilihan2, pilihan4, pilihan5, pilihan7, pilihan9, pilihan_absen;
+int pilihan, pilihan2, pilihan4, pilihan5, pilihan7, pilihan9, pilihan12, pilihan_absen;
 char pilihan1, pilihan3, pilihan6, pilihan8, pilihan10, piihan11;
 int kode_pegawai;
 
@@ -24,7 +24,6 @@ int data_bonus1=0, data_bonus2=0, data_bonus3=0, data_bonus4=0, data_bonus5=0;
 int bonus_pegawai1, bonus_pegawai2, bonus_pegawai3, bonus_pegawai4, bonus_pegawai5;
 int *total_bonus1, *total_bonus2, *total_bonus3, *total_bonus4, *total_bonus5;
 
-int pegawai_satu, pegawai_dua, pegawai_tiga, pegawai_empat, pegawai_lima;
 int rekap_harian1, rekap_harian2, rekap_harian3, rekap_harian4, rekap_harian5;
 int min_gaji1=0, min_gaji2=0, min_gaji3=0, min_gaji4=0, min_gaji5=0;
 int pilihann, pilihann1, pilihann2, pilihann3;
@@ -47,6 +46,8 @@ int absen_bulanan5();
 int rekapan();
 int rekap_absen();
 int minus_gaji();
+void hapus_data();
+void log_out();
 int admin();
 int admin2();
 
@@ -83,6 +84,8 @@ int main(){
 }
 
 int input_pegawai(){
+	
+	
 	
 	menu_utama:
 	printf("\t\t\t\t\t==================================\n"); 
@@ -131,8 +134,9 @@ int menu_utama(){
 	printf("2. INPUT BONUS PEGAWAI		|\n"); 
 	printf("3. ABSENSI PEGAWAI		|\n"); 
 	printf("4. TOTAL GAJI			|\n");
-	printf("5. LOG OUT			|\n"); 
-	printf("6. KELUAR			|\n");
+	printf("5. HAPUS DATA			|\n");
+	printf("6. LOG OUT			|\n"); 
+	printf("7. KELUAR			|\n");
 	printf("=================================\n\n"); 
 		
 	printf("=================================\n");
@@ -160,11 +164,16 @@ int menu_utama(){
 			break;
 		
 		case 5 :
-			input_pegawai();
+			hapus_data();
+			break;
+
+		case 6 :
+			log_out();
 			break;
 			
-		case 6 : 
+		case 7 : 
 			exit(0);
+
 
 		default :
 			printf("\nPeriksa kembali inputan anda!");
@@ -431,44 +440,54 @@ int gaji_bonus(){
 			case 'Y':
 			case 'y':
 				if(kode_pegawai==181201){
-
+					
+					do{
+					printf("Masukkan angka 1 sebagai kehadiran : "); scanf("%d", &rekap_harian1);
+					}while(rekap_harian1 != 1);
+					printf("====================================================================\n"); 
 				    printf ("Ardhiya_181201 %s %s", copy, asctime (Sys_T));
-					rekap_harian1 += 1;
 					goto menu4;
 					break;
-					
 				}
 				else if(kode_pegawai==181202){
-					
+				
+					do{
+					printf("Masukkan angka 1 sebagai kehadiran : "); scanf("%d", &rekap_harian2);
+					}while(rekap_harian2 != 1);
+					printf("====================================================================\n"); 
 				    printf ("Prianka_181202 %s %s", copy, asctime (Sys_T));
-					rekap_harian2 += 1;
 					goto menu4;
-					break;
-					
+					break;	
 				}
 				else if(kode_pegawai==190303){
 					
+					do{
+					printf("Masukkan angka 1 sebagai kehadiran : "); scanf("%d", &rekap_harian3);
+					}while(rekap_harian3 != 1);
+					printf("====================================================================\n"); 
 					printf("Dextiro_190303 %s %s", copy, asctime (Sys_T));
-					rekap_harian3 += 1;
 					goto menu4;
 					break;
-					
 				}
 				else if(kode_pegawai==190604){
 					
+					do{
+					printf("Masukkan angka 1 sebagai kehadiran : "); scanf("%d", &rekap_harian4);
+					}while(rekap_harian4 != 1);
+					printf("====================================================================\n"); 
 					printf("Yukita_190604 %s %s", copy, asctime (Sys_T));
-					rekap_harian4 += 1;
 					goto menu4;
 					break;
-					
 				}
 				else if(kode_pegawai==200105){
 					
+					do{
+					printf("Masukkan angka 1 sebagai kehadiran : "); scanf("%d", &rekap_harian5);
+					}while(rekap_harian5 != 1);
+					printf(" ====================================================================\n"); 
 					printf("Cahaya_200105 %s %s", copy, asctime (Sys_T));
-					rekap_harian5 += 1;
 					goto menu4;
-					break;
-					
+					break;	
 				}
 				
 			case 'N':
@@ -520,6 +539,7 @@ int gaji_bonus(){
 		printf("NOTE: -\n");
 		printf(" ====================================================================\n"); 
 		printf("Ingin melakukan absensi? (y/n) --> "); scanf("%s", &pilihan8);
+		printf("\n");
 	    
 		switch(pilihan8)
 		{
@@ -652,9 +672,9 @@ int gaji_bonus(){
 		scanf("%s", &pilihan5);
 		
 			if(pilihan5 == 'Y' || pilihan5 == 'y'){
-				printf("Rekap gaji sudah dicetak ke dalam file Gaji Pegawai.txt, mohon untuk di cek kembali.");
+				printf("Rekap gaji sudah dicetak ke dalam file Gaji_Pegawai.txt, mohon untuk di cek kembali.");
 					FILE*rekapgaji;
-					rekapgaji = fopen ("Gaji Pegawai.txt", "w+");
+					rekapgaji = fopen ("Gaji_Pegawai.txt", "w+");
 				
 					fprintf(rekapgaji,"\t\t\t\t\t==================================\n"); 
 					fprintf(rekapgaji,"\t\t\t\t\t|	   GAJI PEGAWAI		 |\n"); 
@@ -673,11 +693,11 @@ int gaji_bonus(){
 					fprintf(rekapgaji,"  +-------------------------------------------------------------------------------------+\n");		
 					fprintf(rekapgaji,"  | No |   Nama    | Kode Pegawai |	Gaji Pokok	|   Bonus |	Total Gaji	|\n");
 					fprintf(rekapgaji,"  +-------------------------------------------------------------------------------------+\n");	
-					fprintf(rekapgaji,"  | 1  |  Ardhiya  |    181201    |	%d		|   %d	|	%d		|\n", gaji_pokok, bns1+ *total_bonus1, final_gaji1);
-					fprintf(rekapgaji,"  | 2  |  Prianka  |    181202    |	%d		|   %d	|	%d		|\n", gaji_pokok, bns2+ *total_bonus2, final_gaji2);
-					fprintf(rekapgaji,"  | 3  |  Dextiro  |    190303    |	%d		|   %d	|	%d		|\n", gaji_pokok, bns3+ *total_bonus3, final_gaji3);
-					fprintf(rekapgaji,"  | 4  |  Yukita   |    190604    |	%d		|   %d	|	%d		|\n", gaji_pokok, bns4+ *total_bonus4, final_gaji4);
-					fprintf(rekapgaji,"  | 5  |  Cahaya   |    200105    |	%d		|   %d	|	%d		|\n", gaji_pokok, bns5+ *total_bonus5, final_gaji5);
+					fprintf(rekapgaji,"  | 1  |  Ardhiya  |    181201    |	%d		|   %d  |	%d		|\n", gaji_pokok, bns1+ *total_bonus1, final_gaji1);
+					fprintf(rekapgaji,"  | 2  |  Prianka  |    181202    |	%d		|   %d  |	%d		|\n", gaji_pokok, bns2+ *total_bonus2, final_gaji2);
+					fprintf(rekapgaji,"  | 3  |  Dextiro  |    190303    |	%d		|   %d  |	%d		|\n", gaji_pokok, bns3+ *total_bonus3, final_gaji3);
+					fprintf(rekapgaji,"  | 4  |  Yukita   |    190604    |	%d		|   %d  |	%d		|\n", gaji_pokok, bns4+ *total_bonus4, final_gaji4);
+					fprintf(rekapgaji,"  | 5  |  Cahaya   |    200105    |	%d		|   %d  |	%d		|\n", gaji_pokok, bns5+ *total_bonus5, final_gaji5);
 					fprintf(rekapgaji,"  +-------------------------------------------------------------------------------------+\n");	
 					fclose(rekapgaji);
 					
@@ -791,6 +811,7 @@ int rekapan(){
 		fflush(stdin);
 		system("cls");
 		menu_utama();
+		
 }
 
 int absen_bulanan(){					
@@ -1009,13 +1030,14 @@ int rekap_absen(){
 				fprintf(absen,"|  5	   Cahaya      #     %d      |\n", absen_5 + rekap_harian5);
 				fclose(absen);
 	}
-		
+	
 		printf("\n");
 		printf("Silahkan tekan 'Enter' untuk kembali"); getchar();
 		fflush(stdin);
 		system("cls");
 		menu_utama();			
 }
+
 
 int minus_gaji(){
 	
@@ -1052,6 +1074,104 @@ int minus_gaji(){
 		}
 	}
 }
+
+void hapus_data(){
+	
+	int remove_data1, remove_data2, remove_data3;
+	FILE *hapus1;
+	FILE *hapus2;
+	FILE *hapus3;
+	
+		menu11:
+		printf("\t\t\t\t\t==================================\n"); 
+		printf("\t\t\t\t\t|	   HAPUS DATA		 |\n"); 
+		printf("\t\t\t\t\t==================================\n\n");
+	
+		printf("NOTE: -\n");
+		printf(" ====================================================================\n\n"); 
+		
+		printf("===============================\n");
+		printf("  NO |      Nama File         |\n");
+		printf("===============================\n");
+		printf("  #1 |  Data_Absensi_Pegawai  |\n");
+		printf("  #2 |  Data_Rekap_Bonus      |\n");
+		printf("  #3 |  Gaji_Pegawai          |\n");
+		printf("===============================\n\n");
+		
+		printf("Masukkan angka sesuai file yang ingin dihapus : \n");
+		printf("Pilihan Anda : "); scanf("%d", &pilihan12);
+	
+	switch(pilihan12){
+		
+		case 1 :
+			hapus1 = fopen("Data_Absensi_Pegawai.txt", "w");
+			remove_data1 = remove("Data_Absensi_Pegawai.txt");
+			if(remove_data1 == 0){
+			printf("File terhapus");
+			}
+			else{
+			printf("Error: file ini tidak dapat dihapus / tidak ada");
+			}
+			break;
+		
+		case 2 :
+			hapus2 = fopen("Data_Rekap_Bonus.txt", "w");
+			remove_data2 = remove("Data_Rekap_Bonus.txt");
+			if(remove_data2 == 0){
+			printf("File terhapus");
+			}
+			else{
+			printf("Error: file ini tidak dapat dihapus / tidak ada");
+			}
+			break;
+		
+		case 3 :
+			hapus3 = fopen("Gaji_Pegawai.txt", "w");
+			remove_data3 = remove("Gaji_Pegawai.txt");
+			if(remove_data3 == 0){
+			printf("File terhapus");
+			}
+			else{
+			printf("Error: file ini tidak dapat dihapus / tidak ada");
+			}
+			break;
+		
+		default :
+			printf("\nPilihan yang Anda masukkan tidak tersedia!");
+			printf("\nSilahkan coba kembali");
+			system("cls");
+			goto menu11;
+			
+	}
+	    fflush(stdin);
+    	printf("\n");
+		printf("Silahkan tekan 'Enter' untuk kembali"); getchar();
+		fflush(stdin);			
+		system("cls");
+		menu_utama();
+ 
+}
+
+void log_out(){
+		
+		printf("\t\t\t\t\t==================================\n"); 
+		printf("\t\t\t\t\t|	   LOG OUT		 |\n"); 
+		printf("\t\t\t\t\t==================================\n\n");
+	
+		printf("NOTE: -\n");
+		printf(" ==============================================================================================\n"); 
+		printf("Silahkan untuk memulai program kembali dan login dengan menggunakan kode pegawai masing-masing!\n");
+		printf("Terima kasih...");
+		fflush(stdin);
+		
+		printf("\n\n");
+		printf("Silahkan tekan 'Enter' untuk kembali"); getchar();
+		fflush(stdin);			
+		system("cls");
+		menu_utama();
+}
+
+
 //----------------------------------------------------------------------------------------------------------------------------------------------------------
 int admin(){	
 	menu_admin:
@@ -1066,8 +1186,9 @@ int admin(){
 		printf("=================================\n");
 		printf("1. DAFTAR NAMA DAN HARGA BARANG |\n"); 
 		printf("2. DAFTAR NAMA PEGAWAI		|\n"); 
-		printf("3. ABSEN DAN TOTAL GAJI PEGAWAI	|\n"); 
-		printf("4. KELUAR			|\n");
+		printf("3. ABSEN DAN TOTAL GAJI PEGAWAI	|\n");
+		printf("4. HAPUS DATA			|\n");
+		printf("5. KELUAR			|\n");
 		printf("=================================\n\n"); 
 		
 		printf("=================================\n");
@@ -1092,7 +1213,10 @@ int admin(){
 			admin2();
 			break;
 		
-		case 4 : 
+		case 4 :
+			admin2();
+			
+		case 5 : 
 			exit(0);
 
 		default :
@@ -1176,7 +1300,7 @@ int admin2(){
 		
 		char adminn[1000];
 		FILE*rekapgaji;
-		if((rekapgaji = fopen("Gaji Pegawai.txt","r")) == NULL){
+		if((rekapgaji = fopen("Gaji_Pegawai.txt","r")) == NULL){
       		printf("File tidak ada!");
       		exit(1);
     	}
@@ -1190,5 +1314,80 @@ int admin2(){
 		fflush(stdin);			
 		system("cls");
 		admin();
+	}
+	else if(pilihann==4){
+			int remove_data1, remove_data2, remove_data3;
+	FILE *hapus1;
+	FILE *hapus2;
+	FILE *hapus3;
+	
+		menu11:
+		printf("\t\t\t\t\t==================================\n"); 
+		printf("\t\t\t\t\t|	   HAPUS DATA		 |\n"); 
+		printf("\t\t\t\t\t==================================\n\n");
+	
+		printf("NOTE: -\n");
+		printf(" ====================================================================\n\n"); 
+		
+		printf("===============================\n");
+		printf("  NO |      Nama File         |\n");
+		printf("===============================\n");
+		printf("  #1 |  Data_Absensi_Pegawai  |\n");
+		printf("  #2 |  Data_Rekap_Bonus      |\n");
+		printf("  #3 |  Gaji_Pegawai          |\n");
+		printf("===============================\n\n");
+		
+		printf("Masukkan angka sesuai file yang ingin dihapus : \n");
+		printf("Pilihan Anda : "); scanf("%d", &pilihan12);
+	
+	switch(pilihan12){
+		
+		case 1 :
+			hapus1 = fopen("Data_Absensi_Pegawai.txt", "w");
+			remove_data1 = remove("Data_Absensi_Pegawai.txt");
+			if(remove_data1 == 0){
+			printf("File terhapus");
+			}
+			else{
+			printf("Error: file ini tidak dapat dihapus / tidak ada");
+			}
+			break;
+		
+		case 2 :
+			hapus2 = fopen("Data_Rekap_Bonus.txt", "w");
+			remove_data2 = remove("Data_Rekap_Bonus.txt");
+			if(remove_data2 == 0){
+			printf("File terhapus");
+			}
+			else{
+			printf("Error: file ini tidak dapat dihapus / tidak ada");
+			}
+			break;
+		
+		case 3 :
+			hapus3 = fopen("Gaji_Pegawai.txt", "w");
+			remove_data3 = remove("Gaji_Pegawai.txt");
+			if(remove_data3 == 0){
+			printf("File terhapus");
+			}
+			else{
+			printf("Error: file ini tidak dapat dihapus / tidak ada");
+			}
+			break;
+		
+		default :
+			printf("\nPilihan yang Anda masukkan tidak tersedia!");
+			printf("\nSilahkan coba kembali");
+			system("cls");
+			goto menu11;
+			
+	}
+	    fflush(stdin);
+    	printf("\n");
+		printf("Silahkan tekan 'Enter' untuk kembali"); getchar();
+		fflush(stdin);			
+		system("cls");
+		admin();
+ 
 	}
 }

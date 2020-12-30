@@ -1100,17 +1100,18 @@ void hapus_data(){
 		
 		printf("Masukkan angka sesuai file yang ingin dihapus : \n");
 		printf("Pilihan Anda : "); scanf("%d", &pilihan12);
-	
+	    fflush(stdin);
+			
 	switch(pilihan12){
 		
 		case 1 :
 			hapus1 = fopen("Data_Absensi_Pegawai.txt", "w");
 			remove_data1 = remove("Data_Absensi_Pegawai.txt");
 			if(remove_data1 == 0){
-			printf("File terhapus");
+			printf("\n");
 			}
 			else{
-			printf("Error: file ini tidak dapat dihapus / tidak ada");
+			printf("File terhapus");
 			}
 			break;
 		
@@ -1118,10 +1119,10 @@ void hapus_data(){
 			hapus2 = fopen("Data_Rekap_Bonus.txt", "w");
 			remove_data2 = remove("Data_Rekap_Bonus.txt");
 			if(remove_data2 == 0){
-			printf("File terhapus");
+			printf("\n");
 			}
 			else{
-			printf("Error: file ini tidak dapat dihapus / tidak ada");
+			printf("File terhapus");
 			}
 			break;
 		
@@ -1129,10 +1130,10 @@ void hapus_data(){
 			hapus3 = fopen("Gaji_Pegawai.txt", "w");
 			remove_data3 = remove("Gaji_Pegawai.txt");
 			if(remove_data3 == 0){
-			printf("File terhapus");
+			printf("\n");
 			}
 			else{
-			printf("Error: file ini tidak dapat dihapus / tidak ada");
+			printf("File terhapus");
 			}
 			break;
 		
@@ -1143,7 +1144,7 @@ void hapus_data(){
 			goto menu11;
 			
 	}
-	    fflush(stdin);
+
     	printf("\n");
 		printf("Silahkan tekan 'Enter' untuk kembali"); getchar();
 		fflush(stdin);			
@@ -1346,10 +1347,10 @@ int admin2(){
 			hapus1 = fopen("Data_Absensi_Pegawai.txt", "w");
 			remove_data1 = remove("Data_Absensi_Pegawai.txt");
 			if(remove_data1 == 0){
-			printf("File terhapus");
+			printf("\n");
 			}
 			else{
-			printf("Error: file ini tidak dapat dihapus / tidak ada");
+			printf("File terhapus");
 			}
 			break;
 		
@@ -1357,10 +1358,10 @@ int admin2(){
 			hapus2 = fopen("Data_Rekap_Bonus.txt", "w");
 			remove_data2 = remove("Data_Rekap_Bonus.txt");
 			if(remove_data2 == 0){
-			printf("File terhapus");
+			printf("\n");
 			}
 			else{
-			printf("Error: file ini tidak dapat dihapus / tidak ada");
+			printf("File terhapus");
 			}
 			break;
 		
@@ -1368,10 +1369,10 @@ int admin2(){
 			hapus3 = fopen("Gaji_Pegawai.txt", "w");
 			remove_data3 = remove("Gaji_Pegawai.txt");
 			if(remove_data3 == 0){
-			printf("File terhapus");
+			printf("\n");
 			}
 			else{
-			printf("Error: file ini tidak dapat dihapus / tidak ada");
+			printf("File terhapus");
 			}
 			break;
 		

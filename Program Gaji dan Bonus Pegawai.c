@@ -1123,6 +1123,7 @@ int rekap_absen(){
 	}
 	
 		printf("\n");
+		printf("Dimohon untuk langsung mengecek ulang pada 'Menu Total Gaji Pegawai Anda' Terima kasih..\n");
 		printf("Silahkan tekan 'Enter' untuk kembali"); getchar();
 		fflush(stdin);
 		system("cls");
